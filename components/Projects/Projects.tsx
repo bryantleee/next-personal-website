@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import styles from './projects.module.scss'
+import styles from './Projects.module.scss'
 
 const Projects = () => {
     return (
