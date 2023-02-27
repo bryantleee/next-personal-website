@@ -1,8 +1,8 @@
-.under_construction {
+.construction {
     text-align: center;
     padding-bottom: 1rem;
-}
 
-.white{
-    color: #ffffff;
+    &__text {
+        color: #ffffff;
+    }
 }

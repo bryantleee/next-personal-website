@@ -2,9 +2,9 @@ import styles from './Construction.module.scss'
 
 const Construction = () => {
     return (
-        <div className={styles.under_construction}>
-            <h2 className={styles.white}> Under Construction </h2>
-            <h3 className={styles.white}> Please come back again later! </h3>
+        <div className={styles.construction}>
+            <h2 className={styles.construction__text}> Under Construction </h2>
+            <h3 className={styles.construction__text}> Please come back again later! </h3>
         </div>
     )
 }
