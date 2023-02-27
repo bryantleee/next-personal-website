@@ -1,15 +1,15 @@
+@mixin theme($background-color: #fcd303) {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: $background-color;
+  align-items: center;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 .bac {
-    display: flex;
-    justify-content: space-evenly;
-    background-color: #fcd303;
-    align-items: center;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
+  @include theme;
+}
   
 .bbl {
-    display: flex;
-    justify-content: space-evenly;
-    background-color: #5eeb34;
-    align-items: center;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  @include theme($background-color: #5eeb34);
 }
