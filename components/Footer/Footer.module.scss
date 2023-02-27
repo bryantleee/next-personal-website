@@ -33,3 +33,15 @@
     }
   }
 }
+
+@media (max-width: 500px) {
+  .footer__container {
+    margin-right: 3rem;
+    margin-left: 3rem;
+
+    & a > {
+      margin-left: 0.20rem;
+      margin-right: 0.20rem;
+    }
+  }
+}
