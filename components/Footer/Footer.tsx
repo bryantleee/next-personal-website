@@ -1,9 +1,10 @@
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from './Footer.module.scss'
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
+      <div className={styles.footer__container}>
         <a
           href="https://github.com/bryantleee"
           target="_blank"
@@ -33,7 +34,8 @@ const Footer = () => {
             <Image src="/email-logo.png" alt="Email logo" width={40} height={40} />
           </span>
         </a>
-      </footer>
+      </div>
+    </footer>
   )
 }
 

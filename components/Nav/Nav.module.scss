@@ -1,0 +1,14 @@
+.current {
+    text-decoration: underline;
+  }
+
+.nav {
+    display: flex;
+    padding: 2rem 0;
+    justify-content: center;
+    gap: 0.75rem;
+
+    &__link {
+        color: red;
+    }
+}

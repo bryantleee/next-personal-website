@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
-import styles from '../../styles/Home.module.css'
+import Projects from '../../components/Projects/Projects'
+import styles from '../../styles/Home.module.scss'
 
 const Home: NextPage = () => {
   return (
@@ -13,11 +13,7 @@ const Home: NextPage = () => {
       </Head>
       <main className={styles.main}>
         <h1> Projects </h1>
-        <h2 className="title">
-          <Link href="/projects">
-            <a>Projects</a>
-          </Link>
-        </h2>
+        <Projects />
       </main>
     </div>
   )

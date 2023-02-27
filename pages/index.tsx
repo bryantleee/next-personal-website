@@ -1,30 +1,28 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Footer from '../components/footer'
-import styles from '../styles/Home.module.css'
+import Footer from '../components/Footer/Footer'
+import Construction from '../components/Construction/Construction'
+import BryantLogo from '../components/BryantLogo/BryantLogo'
+import styles from '../styles/Home.module.scss'
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Bryant Lee</title>
-        <meta name="description" content="Personal website for Bryant Lee" />
+        <meta name="description" content="Personal website for Bryant" />
         <link rel="icon" href="/favicon.png" />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          bryant
-        </h1>
-        <h2> 
-          under construction, please come back later!
-        </h2>
-        <h3>
-          {':)'}
-        </h3>
+        <div className={styles.logo_container}>
+          <BryantLogo />
+        </div>
+        
+        <Construction/>
       </main>
       <Footer/>
-    </div>
+    </>
   )
 }
 

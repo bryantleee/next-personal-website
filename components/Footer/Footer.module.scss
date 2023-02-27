@@ -1,0 +1,35 @@
+.footer {
+  background-color: #000000;
+
+  &__container {
+    display: flex;
+    flex: 1;
+    padding: 2rem 0;
+    border-top: 1px solid #ebc95b;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    margin-right: 20rem;
+    margin-left: 20rem;
+
+    & > a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .footer__container {
+    margin-right: 10rem;
+    margin-left: 10rem;
+
+    & a > {
+      margin-left: 0.20rem;
+      margin-right: 0.20rem;
+    }
+  }
+}
