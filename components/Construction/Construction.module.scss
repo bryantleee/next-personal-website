@@ -4,5 +4,26 @@
 
     &__text {
         color: #ffffff;
+        font-weight: normal;
+    }
+
+    h2 {
+        font-size: 25pt;
+    }
+
+    h3 {
+        font-size: 15pt;
+    }
+}
+
+@media (max-width: 800px) {
+    .construction {
+        h2 {
+            font-size: 20pt;
+        }
+    
+        h3 {
+            font-size: 15pt;
+        }
     }
 }
