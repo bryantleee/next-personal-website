@@ -5,3 +5,15 @@
 .bryant_logo_container {
     text-align: center;
 }
+
+@media (max-width: 500px) {
+    .bryant_logo {
+        max-width: 25rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .bryant_logo {
+        max-width: 20rem;
+    }
+}
