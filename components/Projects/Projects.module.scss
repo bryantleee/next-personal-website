@@ -6,10 +6,14 @@
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.bac {
+.wc {
   @include theme;
 }
   
 .bbl {
   @include theme($background-color: #5eeb34);
+}
+
+.bac {
+  @include theme($background-color: #030bfc)
 }

@@ -26,6 +26,16 @@ const Footer = () => {
         </a>
 
         <a
+          href="https://open.spotify.com/user/buyl8jmnflbrrwpxamcolx5qo?si=86d6aadebd4845b3"
+          target = "_blank"
+          rel="noopener noreferrer"
+        >
+          <span className={styles.logo}>
+            <Image src="/spotify-logo.png" alt="Spotify logo" width={40} height={40} />
+          </span>
+        </a>
+
+        <a
           href="mailto:leezbrya@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
