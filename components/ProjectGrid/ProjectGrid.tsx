@@ -1,12 +1,9 @@
-import Image from 'next/image'
-import Nav from '../Nav/Nav'
 import ProjectCard from '../ProjectCard/ProjectCard'
 import styles from './ProjectGrid.module.scss'
 
 const Projects = () => {
     return (
         <>
-            <Nav />
             <div className={styles['project-container']}>
                 <ProjectCard
                     title="Blobbo's Apple Catch"

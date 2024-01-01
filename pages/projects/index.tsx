@@ -1,9 +1,10 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Nav from '../../components/Nav/Nav'
 import ProjectGrid from '../../components/ProjectGrid/ProjectGrid'
-import styles from '../../styles/Home.module.scss'
+import styles from './Projects.module.scss'
 
-const Home: NextPage = () => {
+const Projects: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
@@ -13,10 +14,13 @@ const Home: NextPage = () => {
       </Head>
       <main className={styles.main}>
         <h1 className={styles.title}> Projects </h1>
+        <div className={styles.nav}>
+          <Nav />
+        </div>
         <ProjectGrid />
       </main>
     </div>
   )
 }
 
-export default Home
+export default Projects
