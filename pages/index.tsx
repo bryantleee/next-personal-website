@@ -1,8 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Footer from '../components/Footer/Footer'
-import Construction from '../components/Construction/Construction'
 import BryantLogo from '../components/BryantLogo/BryantLogo'
+import Nav from '../components/Nav/Nav'
+import Introduction from '../components/Introduction/Introduction'
 import styles from '../styles/Home.module.scss'
 
 const Home: NextPage = () => {
@@ -15,11 +16,12 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <div className={styles.logo_container}>
+
+        <div className={styles['logo-container']}>
           <BryantLogo />
+          <Nav />
         </div>
-        
-        <Construction/>
+        <Introduction />
       </main>
       <Footer/>
     </>

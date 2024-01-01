@@ -1,0 +1,29 @@
+.project-card {
+    width: 25rem;
+    height: 25rem;
+    text-align: center;
+    border: double 0.1rem transparent;
+    border-radius: 3rem;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    background-image: linear-gradient(black, black), radial-gradient(circle at top left, #f00, rgb(132, 0, 255));
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.project-card:hover {
+    border: double 0.4rem transparent;
+    cursor: pointer;
+    transition: border 0.3s; 
+}
+
+.project-title {
+    font-size: 1.3rem;
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.project-logo {
+    margin-top: 2rem;
+}

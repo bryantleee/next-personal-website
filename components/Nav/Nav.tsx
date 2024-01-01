@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import styles from './nav.module.scss'
+import styles from './Nav.module.scss'
 
 const Nav = () => {
     const router = useRouter()
@@ -9,7 +9,7 @@ const Nav = () => {
             <Link href="/" className={router.pathname === '/' ? styles.current : '' + 'nav__link'}>
                 About
             </Link>
-            <Link href="/projects" className={router.pathname === styles.current ? '/projects' : '' + 'nav__link'}>
+            <Link href="/projects" className={router.pathname === '/projects' ? styles.current : '' + 'nav__link'}>
                 Projects
             </Link>
         </nav>
