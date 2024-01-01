@@ -7,10 +7,10 @@ const Nav = () => {
     return (
         <nav className={styles.nav}>
             <Link href="/" className={router.pathname === '/' ? styles.current : '' + 'nav__link'}>
-                <a>About</a>
+                About
             </Link>
             <Link href="/projects" className={router.pathname === styles.current ? '/projects' : '' + 'nav__link'}>
-                <a>Projects</a>
+                Projects
             </Link>
         </nav>
     )
