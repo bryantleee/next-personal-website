@@ -8,8 +8,9 @@ const nunito = Nunito({ subsets: ['latin'] })
 const Construction = () => {
     return (
         <div className={styles.construction}>
-            <h2 className={`${styles.construction__text} ${nunito.className}`}> Under Construction </h2>
-            <h3 className={`${styles.construction__text} ${nunito.className}`}> Please come back again later! </h3>
+            <h2 className={`${styles.construction__text} ${nunito.className}`}> Hello! </h2>
+            <h3 className={`${styles.construction__text} ${nunito.className}`}> My name is Bryant Lee. I am a software engineer living in NYC.</h3>
+            <h3 className={`${styles.construction__text} ${nunito.className}`}> Please feel free to reach out or check out some of my work with the links below!</h3>
         </div>
     )
 }
