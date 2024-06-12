@@ -16,6 +16,16 @@
     }
 }
 
+.resume {
+    text-decoration: underline;
+}
+
+.resume:hover {
+    transition: color 0.25s ease;
+    color: yellow;
+    
+}
+
 @media (max-width: 800px) {
     .construction {
         h2 {
@@ -23,7 +33,9 @@
         }
     
         h3 {
-            font-size: 15pt;
+            font-size: 13pt;
+            margin-left: 2rem;
+            margin-right: 2rem;
         }
     }
 }
