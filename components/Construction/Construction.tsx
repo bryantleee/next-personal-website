@@ -13,8 +13,8 @@ const Construction = () => {
       </h2>
       <h3 className={`${styles.construction__text} ${nunito.className}`}>
         {" "}
-        My name is Bryant Lee. I am a software engineer living in NYC, currently
-        working at Meta.
+        My name is Bryant Lee. I am a software engineer living in Manhattan,
+        currently working at Meta.
       </h3>
       <h3 className={`${styles.construction__text} ${nunito.className}`}>
         {" "}
