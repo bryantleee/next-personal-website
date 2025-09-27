@@ -97,12 +97,13 @@
   left: 0;
   z-index: 10;
   width: 60%;
-  max-width: 500px;
-  height: 300px;
+  max-width: 700px;
+  height: 1000px;
 }
 
 .titleCard {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  // background-color: #0070f3;
   padding: 2rem 2.5rem 2.5rem 2rem;
   box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
   position: relative;
@@ -120,7 +121,7 @@
     50% 20%, 
     70% 10%, 
     85% 15%, 
-    100% 5%, 
+    100% 0%, 
     100% 0%
   );
 }
@@ -131,7 +132,7 @@
   top: -30px;
   left: -10px;
   right: -10px;
-  height: 30px;
+  height: 100px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   clip-path: polygon(
     0% 100%, 
@@ -141,13 +142,13 @@
     60% 80%, 
     80% 70%, 
     95% 75%, 
-    100% 65%, 
+    100% 6%, 
     100% 100%
   );
 }
 
 .titleCard:hover {
-  transform: translateY(-15px);
+  transform: translateY(15px);
 }
 
 .title {
