@@ -1,23 +1,21 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Footer from '../components/Footer/Footer'
-import Construction from '../components/Construction/Construction'
-import BryantLogo from '../components/BryantLogo/BryantLogo'
-import Navigation from '../components/Navigation/Navigation'
-import styles from '../styles/Home.module.scss'
+import Footer from '../../components/Footer/Footer'
+import Navigation from '../../components/Navigation/Navigation'
+import styles from '../../styles/Home.module.scss'
 
-const Home: NextPage = () => {
+const Photos: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Bryant Lee</title>
-        <meta name="description" content="Personal website for Bryant" />
+        <title>Photos - Bryant Lee</title>
+        <meta name="description" content="Photography portfolio by Bryant Lee" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
       <main className={styles.main}>
         <div className={styles.pageTitle}>
-          <h1>Bryant Lee</h1>
+          <h1>Photos</h1>
         </div>
         
         <div className={styles.curvedTop}>
@@ -38,11 +36,11 @@ const Home: NextPage = () => {
         </div>
         
         <div className={styles.content}>
-          <div className={styles.logo_container}>
-            <BryantLogo />
+          <div className={styles.construction}>
+            <h2>Coming Soon</h2>
+            <h3>My photography portfolio is currently under construction.</h3>
+            <h3>Check back soon for my latest photos!</h3>
           </div>
-          
-          <Construction/>
         </div>
         
         <div className={styles.curvedBottom}>
@@ -68,4 +66,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default Photos
