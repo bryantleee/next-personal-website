@@ -1,0 +1,96 @@
+.photosContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.photosGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.photoCard {
+  background: #8bac0f;
+  border: 3px solid #0f380f;
+  box-shadow: 0 4px 0 #0f380f;
+  transition: all 0.1s ease;
+  cursor: pointer;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #0f380f;
+    background: #9bbc0f;
+  }
+  
+  &:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #0f380f;
+  }
+}
+
+.photoPlaceholder {
+  padding: 2rem;
+  text-align: center;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.photoIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  image-rendering: pixelated;
+}
+
+.photoText {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  color: #0f380f;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .photosGrid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .photoPlaceholder {
+    padding: 1.5rem;
+    min-height: 150px;
+  }
+  
+  .photoIcon {
+    font-size: 2rem;
+  }
+  
+  .photoText {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .photosGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .photoPlaceholder {
+    padding: 1rem;
+    min-height: 120px;
+  }
+  
+  .photoIcon {
+    font-size: 1.5rem;
+  }
+  
+  .photoText {
+    font-size: 7px;
+  }
+}

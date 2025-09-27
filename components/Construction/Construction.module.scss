@@ -1,41 +1,60 @@
 .construction {
     text-align: center;
-    padding-bottom: 1rem;
+    padding: 2rem;
+    border: 3px solid #0f380f;
+    background-color: #8bac0f;
+    box-shadow: 0 4px 0 #0f380f;
+    margin: 1rem 0;
 
     &__text {
-        color: #ffffff;
+        color: #0f380f;
         font-weight: normal;
+        font-family: 'Press Start 2P', monospace;
+        line-height: 1.8;
     }
 
     h2 {
-        font-size: 25pt;
+        font-size: 12px;
+        margin-bottom: 1rem;
     }
 
     h3 {
-        font-size: 15pt;
+        font-size: 10px;
+        margin-bottom: 1rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
 .resume {
     text-decoration: underline;
+    color: #0f380f;
+    border: 2px solid #0f380f;
+    padding: 4px 8px;
+    background-color: #9bbc0f;
+    display: inline-block;
+    margin-top: 1rem;
 }
 
 .resume:hover {
-    transition: color 0.25s ease;
-    color: yellow;
-    
+    transition: all 0.1s ease;
+    background-color: #a4c40f;
+    color: #306230;
 }
 
 @media (max-width: 800px) {
     .construction {
+        padding: 1.5rem 1rem;
+        
         h2 {
-            font-size: 20pt;
+            font-size: 10px;
         }
     
         h3 {
-            font-size: 13pt;
-            margin-left: 2rem;
-            margin-right: 2rem;
+            font-size: 8px;
+            margin-left: 1rem;
+            margin-right: 1rem;
         }
     }
 }

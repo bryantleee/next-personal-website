@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Footer from '../components/Footer/Footer'
 import Construction from '../components/Construction/Construction'
 import BryantLogo from '../components/BryantLogo/BryantLogo'
+import Nav from '../components/Nav/Nav'
 import styles from '../styles/Home.module.scss'
 
 const Home: NextPage = () => {
@@ -14,6 +15,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
+      <Nav />
       <main className={styles.main}>
         <div className={styles.logo_container}>
           <BryantLogo />

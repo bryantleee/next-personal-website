@@ -1,9 +1,14 @@
 .bryant_logo {
     max-width: 30rem;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    filter: contrast(1.2) brightness(0.9);
 }
 
 .bryant_logo_container {
     text-align: center;
+    padding: 1rem;
 }
 
 @media (max-width: 500px) {
