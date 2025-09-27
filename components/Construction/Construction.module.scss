@@ -1,18 +1,45 @@
 .construction {
     text-align: center;
-    padding-bottom: 1rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    box-shadow: 0 8px 32px rgba(79, 172, 254, 0.3);
+    margin: 2rem 0;
+    position: relative;
+    z-index: 5;
+    clip-path: polygon(
+      0% 15%, 
+      10% 5%, 
+      25% 10%, 
+      40% 0%, 
+      60% 5%, 
+      75% 0%, 
+      90% 5%, 
+      100% 10%, 
+      100% 85%, 
+      90% 95%, 
+      75% 90%, 
+      60% 95%, 
+      40% 100%, 
+      25% 95%, 
+      10% 100%, 
+      0% 95%
+    );
 
     &__text {
         color: #ffffff;
         font-weight: normal;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     h2 {
         font-size: 25pt;
+        margin-bottom: 1rem;
     }
 
     h3 {
         font-size: 15pt;
+        margin-bottom: 1rem;
+        line-height: 1.6;
     }
 }
 

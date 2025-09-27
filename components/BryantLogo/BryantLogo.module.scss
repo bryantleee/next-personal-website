@@ -1,9 +1,16 @@
 .bryant_logo {
     max-width: 30rem;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease;
+}
+
+.bryant_logo:hover {
+    transform: scale(1.05);
 }
 
 .bryant_logo_container {
     text-align: center;
+    padding: 1rem;
 }
 
 @media (max-width: 500px) {

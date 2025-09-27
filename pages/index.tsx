@@ -15,13 +15,29 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <div className={styles.logo_container}>
-          <BryantLogo />
+        {/* Title section - curved card hanging from top-left */}
+        <div className={styles.titleSection}>
+          <div className={styles.titleCard}>
+            <h1 className={styles.title}>Bryant Lee</h1>
+            <p className={styles.subtitle}>Software Engineer</p>
+          </div>
         </div>
-        
-        <Construction/>
+
+        {/* Main content area */}
+        <div className={styles.contentArea}>
+          <div className={styles.logo_container}>
+            <BryantLogo />
+          </div>
+          <Construction/>
+        </div>
+
+        {/* Footer section - curved card hanging from bottom-right */}
+        <div className={styles.footerSection}>
+          <div className={styles.footerCard}>
+            <Footer/>
+          </div>
+        </div>
       </main>
-      <Footer/>
     </>
   )
 }

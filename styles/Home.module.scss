@@ -1,8 +1,10 @@
 .main {
-  min-height: 87vh;
+  min-height: 100vh;
   flex: 1;
-  /* background-color: #f8f1dd; */
-  background-color:#000000;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -85,7 +87,178 @@
 }
 
 .logo_container {
-  padding-top: 7rem;
+  padding-top: 2rem;
+}
+
+/* Title Section - Naturally curved card hanging from top-left */
+.titleSection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 60%;
+  max-width: 500px;
+  height: 300px;
+}
+
+.titleCard {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem 2.5rem 2.5rem 2rem;
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+  position: relative;
+  transform: translateY(-10px);
+  transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  clip-path: polygon(
+    0% 0%, 
+    0% 20%, 
+    15% 25%, 
+    30% 15%, 
+    50% 20%, 
+    70% 10%, 
+    85% 15%, 
+    100% 5%, 
+    100% 0%
+  );
+}
+
+.titleCard::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: -10px;
+  right: -10px;
+  height: 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  clip-path: polygon(
+    0% 100%, 
+    10% 80%, 
+    25% 85%, 
+    40% 75%, 
+    60% 80%, 
+    80% 70%, 
+    95% 75%, 
+    100% 65%, 
+    100% 100%
+  );
+}
+
+.titleCard:hover {
+  transform: translateY(-15px);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 400;
+}
+
+/* Content Area */
+.contentArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 1;
+  position: relative;
+}
+
+/* Footer Section - Naturally curved card hanging from bottom-right */
+.footerSection {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  width: 60%;
+  max-width: 500px;
+  height: 250px;
+}
+
+.footerCard {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  padding: 2.5rem 2rem 2rem 2.5rem;
+  box-shadow: 0 -8px 32px rgba(240, 147, 251, 0.3);
+  position: relative;
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(
+    0% 100%, 
+    0% 80%, 
+    15% 75%, 
+    30% 85%, 
+    50% 80%, 
+    70% 90%, 
+    85% 85%, 
+    100% 95%, 
+    100% 100%
+  );
+}
+
+.footerCard::before {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: -10px;
+  right: -10px;
+  height: 30px;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  clip-path: polygon(
+    0% 0%, 
+    10% 20%, 
+    25% 15%, 
+    40% 25%, 
+    60% 20%, 
+    80% 30%, 
+    95% 25%, 
+    100% 35%, 
+    100% 0%
+  );
+}
+
+.footerCard:hover {
+  transform: translateY(15px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .titleSection,
+  .footerSection {
+    width: 80%;
+    max-width: 300px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .titleCard,
+  .footerCard {
+    padding: 1.5rem;
+  }
 }
 
 .path {
