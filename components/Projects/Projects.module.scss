@@ -9,16 +9,17 @@
 
 .projectCard {
   position: relative;
-  background: #ffffff;
+  background: #f9f6f0;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(139, 69, 19, 0.15);
+  border: 1px solid #d4c4a8;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   
   &:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 40px rgba(139, 69, 19, 0.25);
   }
   
   &.hovered {
@@ -58,17 +59,17 @@
 .projectTitle {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #8b4513;
   margin: 0 0 0.75rem 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Georgia', 'Times New Roman', serif;
 }
 
 .projectDescription {
   font-size: 0.95rem;
-  color: #666;
+  color: #8b7355;
   line-height: 1.5;
   margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Georgia', 'Times New Roman', serif;
 }
 
 .accentBar {

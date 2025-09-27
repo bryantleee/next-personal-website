@@ -3,16 +3,21 @@
     padding-bottom: 1rem;
 
     &__text {
-        color: #ffffff;
+        color: #8b4513;
         font-weight: normal;
+        font-family: 'Georgia', 'Times New Roman', serif;
     }
 
     h2 {
         font-size: 25pt;
+        font-family: 'Georgia', 'Times New Roman', serif;
+        color: #8b4513;
     }
 
     h3 {
         font-size: 15pt;
+        font-family: 'Georgia', 'Times New Roman', serif;
+        color: #8b7355;
     }
 }
 
@@ -22,7 +27,7 @@
 
 .resume:hover {
     transition: color 0.25s ease;
-    color: yellow;
+    color: #d2691e;
     
 }
 
