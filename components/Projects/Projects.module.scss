@@ -7,6 +7,22 @@
   margin: 0 auto;
 }
 
+.projectLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  &:focus {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
 .projectCard {
   position: relative;
   background: #f9f6f0;
