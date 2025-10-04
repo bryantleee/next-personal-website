@@ -1,12 +1,12 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import HamburgerMenu from '../../../components/HamburgerMenu/HamburgerMenu'
+import DogEarMenu from '../../../components/DogEarMenu/DogEarMenu'
 import styles from '../../../styles/Home.module.scss'
 
 const BryantsBestList: NextPage = () => {
   return (
     <div className={styles.container}>
-      <HamburgerMenu />
+      <DogEarMenu />
       <Head>
         <title>Bryant's Best List - Bryant</title>
         <meta name="description" content="A curated collection of the best tools, resources, and recommendations for developers." />

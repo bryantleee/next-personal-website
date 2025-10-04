@@ -1,12 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import HamburgerMenu from "../../../components/HamburgerMenu/HamburgerMenu";
+import DogEarMenu from "../../../components/DogEarMenu/DogEarMenu";
 import styles from "../../../styles/Home.module.scss";
 
 const BlobboAppleCatch: NextPage = () => {
   return (
     <div className={styles.container}>
-      <HamburgerMenu />
+      <DogEarMenu />
       <Head>
         <title>Blobbo's Apple Catch - Bryant</title>
         <meta

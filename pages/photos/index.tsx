@@ -1,13 +1,13 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Photos from "../../components/Photos/Photos";
-import HamburgerMenu from "../../components/HamburgerMenu/HamburgerMenu";
+import DogEarMenu from "../../components/DogEarMenu/DogEarMenu";
 import styles from "../../styles/Home.module.scss";
 
 const PhotosPage: NextPage = () => {
   return (
     <div className={styles.container}>
-      <HamburgerMenu />
+      <DogEarMenu />
       <Head>
         <title>Photos - Bryant</title>
         <meta name="description" content="Explore Bryant's photography!" />

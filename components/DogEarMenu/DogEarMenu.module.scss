@@ -1,0 +1,294 @@
+.dogEarContainer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.5s ease;
+}
+
+.dogEarContainer.expanded {
+  width: 300px;
+  height: 400px;
+}
+
+.dogEar {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: #ffd700;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  z-index: 1;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.dogEarContainer:hover:not(.expanded) .dogEar {
+  width: 120px;
+  height: 120px;
+  transform: scale(1.1);
+}
+
+.dogEarContainer.expanded .dogEar {
+  width: 400px;
+  height: 400px;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.dogEarPaper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: #ffd700;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  z-index: 2;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.dogEarContainer:hover:not(.expanded) .dogEarPaper {
+  width: 120px;
+  height: 120px;
+  transform: scale(1.1);
+}
+
+.dogEarContainer.expanded .dogEarPaper {
+  width: 400px;
+  height: 400px;
+  opacity: 0;
+}
+
+.dogEarShadow {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: rgba(0, 0, 0, 0.2);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  z-index: 0;
+  transition: all 0.3s ease;
+}
+
+.dogEarContainer:hover:not(.expanded) .dogEarShadow {
+  width: 120px;
+  height: 120px;
+  transform: scale(1.1);
+}
+
+.dogEarContainer.expanded .dogEarShadow {
+  width: 400px;
+  height: 400px;
+  opacity: 0;
+}
+
+.dogEarBack {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: #ffd700;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  z-index: 1;
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.dogEarContainer.expanded .dogEarBack {
+  width: 400px;
+  height: 400px;
+  opacity: 1;
+}
+
+.dogEarHiding {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  opacity: 0;
+  z-index: 5;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.dogEarContainer.expanded .dogEarHiding {
+  opacity: 1;
+  pointer-events: auto;
+  width: 400px;
+  height: 400px;
+}
+
+.menuContent {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  height: 400px;
+  background-color: #ffd700;
+  border-radius: 0 0 0 20px;
+  padding: 28px 30px 30px 30px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  transform: translateX(100%);
+}
+
+.dogEarContainer.expanded .menuContent {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.menuHeader {
+  color: #000;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  transform: translateX(20px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.dogEarContainer.expanded .menuHeader {
+  transform: translateX(0);
+  opacity: 1;
+  transition-delay: 0.1s;
+}
+
+.menuItems {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.menuItems li {
+  margin-bottom: 20px;
+  transform: translateX(20px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.dogEarContainer.expanded .menuItems li {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.dogEarContainer.expanded .menuItems li:nth-child(1) {
+  transition-delay: 0.2s;
+}
+
+.dogEarContainer.expanded .menuItems li:nth-child(2) {
+  transition-delay: 0.3s;
+}
+
+.dogEarContainer.expanded .menuItems li:nth-child(3) {
+  transition-delay: 0.4s;
+}
+
+.menuLink {
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  max-width: 100px;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.menuLink:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.menuLink.active {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .dogEarContainer {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .dogEar {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .dogEarPaper {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .dogEarShadow {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .dogEarBack {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .dogEarHiding {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .dogEarContainer.expanded {
+    width: 320px;
+    height: 350px;
+  }
+  
+  .dogEarContainer.expanded .dogEar {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .dogEarContainer.expanded .dogEarPaper {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .dogEarContainer.expanded .dogEarShadow {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .dogEarContainer.expanded .dogEarBack {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .dogEarContainer.expanded .dogEarHiding {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .menuContent {
+    width: 350px;
+    height: 350px;
+    padding: 29px 25px 25px 25px;
+  }
+  
+  .menuLink {
+    font-size: 16px;
+    padding: 8px;
+  }
+}
