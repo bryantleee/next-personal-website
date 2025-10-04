@@ -3,13 +3,11 @@ import Head from 'next/head'
 import Footer from '../components/Footer/Footer'
 import Construction from '../components/Construction/Construction'
 import BryantLogo from '../components/BryantLogo/BryantLogo'
-import DogEarMenu from '../components/DogEarMenu/DogEarMenu'
 import styles from '../styles/Home.module.scss'
 
 const Home: NextPage = () => {
   return (
     <>
-      <DogEarMenu />
       <Head>
         <title>Bryant Lee</title>
         <meta name="description" content="Personal website for Bryant" />

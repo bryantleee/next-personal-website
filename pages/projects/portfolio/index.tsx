@@ -1,12 +1,10 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import DogEarMenu from '../../../components/DogEarMenu/DogEarMenu'
 import styles from '../../../styles/Home.module.scss'
 
 const Portfolio: NextPage = () => {
   return (
     <div className={styles.container}>
-      <DogEarMenu />
       <Head>
         <title>Portfolio Website - Bryant</title>
         <meta name="description" content="A modern, responsive portfolio website built with Next.js and TypeScript." />

@@ -1,13 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Projects from '../../components/Projects/Projects'
-import DogEarMenu from '../../components/DogEarMenu/DogEarMenu'
 import styles from '../../styles/Home.module.scss'
 
 const ProjectsPage: NextPage = () => {
   return (
     <div className={styles.container}>
-      <DogEarMenu />
       <Head>
         <title>Projects - Bryant</title>
         <meta name="description" content="Explore Bryant's portfolio of projects and creative work" />
