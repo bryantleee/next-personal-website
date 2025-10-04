@@ -1,0 +1,104 @@
+.techStack {
+  padding: 4rem 2rem;
+  background-color: #faf9f7;
+  border-top: 1px solid #e8ddd4;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #8b4513;
+  margin: 0 0 3rem 0;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  text-align: center;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.category {
+  background: linear-gradient(135deg, #f4f1e8 0%, #e8ddd4 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid #8b4513;
+}
+
+.categoryTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #8b4513;
+  margin: 0 0 1.5rem 0;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  text-align: center;
+}
+
+.techGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.techItem {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #d4c4b0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.techItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.15);
+}
+
+.techName {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #8b4513;
+  margin: 0 0 0.5rem 0;
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.techDescription {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #5a4a3a;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .techStack {
+    padding: 3rem 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .categories {
+    gap: 2rem;
+  }
+  
+  .category {
+    padding: 1.5rem;
+  }
+  
+  .techGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .techItem {
+    padding: 1rem;
+  }
+}
+
