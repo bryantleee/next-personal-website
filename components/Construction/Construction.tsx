@@ -18,8 +18,8 @@ const Construction = () => {
       </h3>
       <h3 className={`${styles.construction__text} ${nunito.className}`}>
         {" "}
-        Outside of work, I love homelabbing, playing video games, and traveling!
-        I am currently trying to get better at photography.
+        Outside of work, I love homelabbing, trying new video games, and
+        exploring interesting places!
       </h3>
       <h3 className={`${styles.construction__text} ${nunito.className}`}>
         {" "}

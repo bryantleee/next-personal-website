@@ -8,7 +8,7 @@ const PhotosPage: NextPage = () => {
     <div className={styles.container}>
       <Head>
         <title>Photos - Bryant</title>
-        <meta name="description" content="Explore Bryant's photography!" />
+        <meta name="description" content="Explore Bryant's Photos!" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <main className={styles.main}>
@@ -25,4 +25,3 @@ const PhotosPage: NextPage = () => {
 };
 
 export default PhotosPage;
-
