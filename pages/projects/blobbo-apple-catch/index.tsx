@@ -6,7 +6,7 @@ const BlobboAppleCatch: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Blobbo's Apple Catch - Bryant</title>
+        <title>Blobbo&apos;s Apple Catch - Bryant</title>
         <meta
           name="description"
           content="A homebrew Game Boy game where players help Blobbo catch falling apples and dodge obstacles!"
@@ -15,7 +15,7 @@ const BlobboAppleCatch: NextPage = () => {
       </Head>
       <main className={styles.main}>
         <div className={styles.projectsHeader}>
-          <h1 className={styles.projectsTitle}>Blobbo's Apple Catch</h1>
+          <h1 className={styles.projectsTitle}>Blobbo&apos;s Apple Catch</h1>
           <p className={styles.projectsSubtitle}>
             A fun mobile game featuring Blobbo catching apples with smooth
             physics and engaging gameplay.
@@ -33,7 +33,7 @@ const BlobboAppleCatch: NextPage = () => {
             About This Project
           </h2>
           <p style={{ marginBottom: "1.5rem", lineHeight: "1.6" }}>
-            Blobbo's Apple Catch is a charming mobile game where players help
+            Blobbo&apos;s Apple Catch is a charming mobile game where players help
             the adorable character Blobbo catch falling apples. The game
             features smooth physics, engaging gameplay mechanics, and
             progressively challenging levels.
