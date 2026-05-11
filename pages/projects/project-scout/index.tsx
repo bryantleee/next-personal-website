@@ -32,7 +32,7 @@ const ProjectScout: NextPage = () => {
         >
           <div style={{ marginBottom: "2rem", textAlign: "center" }}>
             <Image
-              src="/project-scout.png"
+              src="/project-scout.webp"
               alt="Project Scout architecture diagram"
               width={1200}
               height={700}
