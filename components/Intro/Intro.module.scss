@@ -1,4 +1,4 @@
-.construction {
+.intro {
     text-align: center;
     padding-bottom: 1rem;
 
@@ -16,22 +16,12 @@
     }
 }
 
-.resume {
-    text-decoration: underline;
-}
-
-.resume:hover {
-    transition: color 0.25s ease;
-    color: yellow;
-    
-}
-
 @media (max-width: 800px) {
-    .construction {
+    .intro {
         h2 {
             font-size: 20pt;
         }
-    
+
         h3 {
             font-size: 13pt;
             margin-left: 2rem;
