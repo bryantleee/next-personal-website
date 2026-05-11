@@ -1,15 +1,82 @@
-@mixin theme($background-color: #fcd303) {
-  display: flex;
-  justify-content: space-evenly;
-  background-color: $background-color;
-  align-items: center;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.bac {
-  @include theme;
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  overflow: hidden;
+  color: #fff;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: #ebc95b;
+    transform: translateY(-2px);
+  }
 }
-  
-.bbl {
-  @include theme($background-color: #5eeb34);
+
+.thumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #000;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.thumbnailPlaceholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+}
+
+.cardBody {
+  padding: 1.25rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #ebc95b;
+}
+
+.cardSubtitle {
+  margin: 0;
+  font-size: 1rem;
+  font-style: italic;
+  color: #ddd;
+}
+
+.cardBlurb {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
 }

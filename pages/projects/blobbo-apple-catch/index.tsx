@@ -1,15 +1,17 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import styles from "../../../styles/Home.module.scss";
+import type { NextPage } from 'next'
+import Head from 'next/head'
+import Image from 'next/image'
+import Footer from '../../../components/Footer/Footer'
+import styles from '../../../styles/Home.module.scss'
 
 const BlobboAppleCatch: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Blobbo&apos;s Apple Catch - Bryant</title>
         <meta
           name="description"
-          content="A homebrew Game Boy game where players help Blobbo catch falling apples and dodge obstacles!"
+          content="An original homebrew Nintendo Game Boy game built in C with GBDK 2020, with a physical cartridge release."
         />
         <link rel="icon" href="/favicon.svg" />
       </Head>
@@ -17,50 +19,96 @@ const BlobboAppleCatch: NextPage = () => {
         <div className={styles.projectsHeader}>
           <h1 className={styles.projectsTitle}>Blobbo&apos;s Apple Catch</h1>
           <p className={styles.projectsSubtitle}>
-            A fun mobile game featuring Blobbo catching apples with smooth
-            physics and engaging gameplay.
+            Nintendo Game Boy homebrew game
           </p>
         </div>
         <div
           style={{
-            padding: "2rem",
-            maxWidth: "800px",
-            margin: "0 auto",
-            color: "#ffffff",
+            padding: '0 2rem 3rem',
+            maxWidth: '800px',
+            margin: '0 auto',
+            color: '#ffffff',
           }}
         >
-          <h2 style={{ color: "#ebc95b", marginBottom: "1rem" }}>
-            About This Project
-          </h2>
-          <p style={{ marginBottom: "1.5rem", lineHeight: "1.6" }}>
-            Blobbo&apos;s Apple Catch is a charming mobile game where players help
-            the adorable character Blobbo catch falling apples. The game
-            features smooth physics, engaging gameplay mechanics, and
-            progressively challenging levels.
+          <div style={{ marginBottom: '2rem', textAlign: 'center' }}>
+            <Image
+              src="/blobbo-apple-catch.jpg"
+              alt="Blobbo's Apple Catch on a Game Boy"
+              width={3024}
+              height={4032}
+              style={{ width: '100%', maxWidth: '500px', height: 'auto', borderRadius: 8 }}
+            />
+          </div>
+
+          <h2 style={{ color: '#ebc95b', marginBottom: '1rem' }}>About</h2>
+          <p style={{ marginBottom: '1.5rem', lineHeight: '1.6' }}>
+            Blobbo&apos;s Apple Catch is an original homebrew game for the Nintendo Game Boy.
+            The player guides Blobbo and his basket to catch falling apples while dodging
+            spiders, all running on real Game Boy hardware.
           </p>
-          <h3 style={{ color: "#ebc95b", marginBottom: "1rem" }}>
-            Key Features
-          </h3>
-          <ul style={{ marginBottom: "1.5rem", paddingLeft: "1.5rem" }}>
-            <li style={{ marginBottom: "0.5rem" }}>Intuitive touch controls</li>
-            <li style={{ marginBottom: "0.5rem" }}>Smooth physics engine</li>
-            <li style={{ marginBottom: "0.5rem" }}>Progressive difficulty</li>
-            <li style={{ marginBottom: "0.5rem" }}>
-              Charming character design
+
+          <h3 style={{ color: '#ebc95b', marginBottom: '1rem' }}>Highlights</h3>
+          <ul style={{ marginBottom: '1.5rem', paddingLeft: '1.5rem', lineHeight: '1.7' }}>
+            <li style={{ marginBottom: '0.5rem' }}>
+              Written in C using{' '}
+              <a
+                href="https://github.com/gbdk-2020/gbdk-2020"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: '#ebc95b', textDecoration: 'underline' }}
+              >
+                GBDK 2020
+              </a>
+              ; compiles to a ROM playable on original Game Boy hardware, emulators, and
+              the Analogue Pocket.
             </li>
-            <li style={{ marginBottom: "0.5rem" }}>Score tracking system</li>
+            <li style={{ marginBottom: '0.5rem' }}>
+              Custom Super Game Boy border for an enhanced presentation when played on a
+              Super Nintendo.
+            </li>
+            <li style={{ marginBottom: '0.5rem' }}>
+              Hand-drawn pixel art, sprites, and tile graphics designed for the Game Boy&apos;s
+              4-color palette and 8x8 tile constraints.
+            </li>
+            <li style={{ marginBottom: '0.5rem' }}>
+              Released as a{' '}
+              <a
+                href="https://drive.google.com/file/d/1SuSRxeb4GMKE__AFbagq8SFiUG_N7MgH/view"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: '#ebc95b', textDecoration: 'underline' }}
+              >
+                physical cartridge
+              </a>
+              , with sticker artwork and SGB border graphics by{' '}
+              <a
+                href="https://carolynetan.squarespace.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: '#ebc95b', textDecoration: 'underline' }}
+              >
+                Carolyne Tan
+              </a>
+              .
+            </li>
+            <li style={{ marginBottom: '0.5rem' }}>
+              Open source on{' '}
+              <a
+                href="https://github.com/bryantleee/blobbos-apple-catch"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: '#ebc95b', textDecoration: 'underline' }}
+              >
+                GitHub
+              </a>
+              ; ROM downloads available on the Releases page.
+            </li>
           </ul>
-          <h3 style={{ color: "#ebc95b", marginBottom: "1rem" }}>
-            Technology Stack
-          </h3>
-          <p style={{ marginBottom: "1.5rem" }}>
-            Built using modern mobile game development tools with focus on
-            performance and user experience.
-          </p>
         </div>
       </main>
-    </div>
-  );
-};
+      <Footer />
+    </>
+  )
+}
 
-export default BlobboAppleCatch;
+export default BlobboAppleCatch

@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         <div className={styles.logo_container}>
           <BryantLogo />
         </div>
-        
+
         <Construction/>
       </main>
       <Footer/>

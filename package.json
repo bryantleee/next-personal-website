@@ -4,9 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/check-image-metadata.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:photos": "node scripts/check-image-metadata.mjs",
+    "strip:photos": "node scripts/strip-image-metadata.mjs"
   },
   "dependencies": {
     "next": "^15.0.8",
