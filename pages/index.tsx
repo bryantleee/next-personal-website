@@ -1,18 +1,29 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
 import Footer from '../components/Footer/Footer'
 import Construction from '../components/Construction/Construction'
 import BryantLogo from '../components/BryantLogo/BryantLogo'
+import Seo from '../components/Seo/Seo'
 import styles from '../styles/Home.module.scss'
 
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Bryant Lee</title>
-        <meta name="description" content="Personal website for Bryant" />
-        <link rel="icon" href="/favicon.svg" />
-      </Head>
+      <Seo
+        title="Bryant Lee"
+        description="Bryant Lee: software engineer. Game Boy homebrew, self-hosted infrastructure, and edge AI projects."
+        path="/"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Person',
+          name: 'Bryant Lee',
+          url: 'https://www.bryant.li',
+          jobTitle: 'Software Engineer',
+          sameAs: [
+            'https://github.com/bryantleee',
+            'https://www.linkedin.com/in/bryantleee/',
+          ],
+        }}
+      />
 
       <main className={styles.main}>
         <div className={styles.logo_container}>

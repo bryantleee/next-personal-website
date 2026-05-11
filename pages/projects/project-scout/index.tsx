@@ -1,20 +1,31 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
 import Footer from "../../../components/Footer/Footer";
+import Seo from "../../../components/Seo/Seo";
 import styles from "../../../styles/Home.module.scss";
+
+const SCOUT_DESCRIPTION =
+  "A scalable, internet-free monitoring system: edge AI on a Raspberry Pi 5 + Hailo NPU, alerting over a public LoRa mesh network.";
 
 const ProjectScout: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Project Scout - Bryant</title>
-        <meta
-          name="description"
-          content="A scalable, internet-free monitoring system: edge AI on a Raspberry Pi 5 + Hailo NPU, alerting over a public LoRa mesh network."
-        />
-        <link rel="icon" href="/favicon.svg" />
-      </Head>
+      <Seo
+        title="Project Scout | Bryant Lee"
+        description={SCOUT_DESCRIPTION}
+        path="/projects/project-scout"
+        image="/project-scout.webp"
+        type="article"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          name: "Project Scout",
+          description: SCOUT_DESCRIPTION,
+          image: "https://www.bryant.li/project-scout.webp",
+          author: { "@type": "Person", name: "Bryant Lee" },
+          url: "https://www.bryant.li/projects/project-scout",
+        }}
+      />
       <main className={styles.main}>
         <div className={styles.projectsHeader}>
           <h1 className={styles.projectsTitle}>Project Scout</h1>

@@ -1,20 +1,31 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
 import Footer from "../../../components/Footer/Footer";
+import Seo from "../../../components/Seo/Seo";
 import styles from "../../../styles/Home.module.scss";
+
+const HOME_LAB_DESCRIPTION =
+  "A self-hosted, multi-node homelab running Docker, observability, and home automation stacks.";
 
 const HomeLab: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Home Lab - Bryant</title>
-        <meta
-          name="description"
-          content="A self-hosted, multi-node homelab running Docker, observability, and home automation stacks."
-        />
-        <link rel="icon" href="/favicon.svg" />
-      </Head>
+      <Seo
+        title="Home Lab | Bryant Lee"
+        description={HOME_LAB_DESCRIPTION}
+        path="/projects/home-lab"
+        image="/home-lab.webp"
+        type="article"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          name: "Home Lab",
+          description: HOME_LAB_DESCRIPTION,
+          image: "https://www.bryant.li/home-lab.webp",
+          author: { "@type": "Person", name: "Bryant Lee" },
+          url: "https://www.bryant.li/projects/home-lab",
+        }}
+      />
       <main className={styles.main}>
         <div className={styles.projectsHeader}>
           <h1 className={styles.projectsTitle}>Home Lab</h1>
