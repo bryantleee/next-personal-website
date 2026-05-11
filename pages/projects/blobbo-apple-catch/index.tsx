@@ -32,7 +32,7 @@ const BlobboAppleCatch: NextPage = () => {
         >
           <div style={{ marginBottom: '2rem', textAlign: 'center' }}>
             <Image
-              src="/blobbo-apple-catch.jpg"
+              src="/blobbo-apple-catch.webp"
               alt="Blobbo's Apple Catch on a Game Boy"
               width={3024}
               height={4032}

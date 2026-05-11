@@ -15,7 +15,7 @@ export const projects: ProjectSummary[] = [
     subtitle: 'Offline AI-Powered Home Security System',
     blurb:
       'Internet-free edge AI on a Raspberry Pi 5 + Hailo-8 NPU, alerting over a public LoRa mesh network. No cloud, no SIM, no dedicated radio.',
-    imageUrl: '/project-scout.png',
+    imageUrl: '/project-scout.webp',
   },
   {
     slug: 'home-lab',
@@ -23,7 +23,7 @@ export const projects: ProjectSummary[] = [
     subtitle: 'Self-Hosted Infrastructure & Networking',
     blurb:
       'A multi-node homelab running Docker-based media, productivity, and local AI inference stacks with full Prometheus/Grafana observability.',
-    imageUrl: '/home-lab.jpg',
+    imageUrl: '/home-lab.webp',
   },
   {
     slug: 'blobbo-apple-catch',
@@ -31,6 +31,6 @@ export const projects: ProjectSummary[] = [
     subtitle: 'Nintendo Game Boy homebrew game',
     blurb:
       'A homebrew game compiling to Nintendo Game Boy, Game Gear, and Analogue Pocket, with a physical cartridge release.',
-    imageUrl: '/blobbo-apple-catch.jpg',
+    imageUrl: '/blobbo-apple-catch.webp',
   },
 ]

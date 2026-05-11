@@ -32,7 +32,7 @@ const HomeLab: NextPage = () => {
         >
           <div style={{ marginBottom: "2rem", textAlign: "center" }}>
             <Image
-              src="/home-lab.jpg"
+              src="/home-lab.webp"
               alt="Home lab rack"
               width={1066}
               height={1600}
