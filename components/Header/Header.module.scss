@@ -1,0 +1,46 @@
+$gold: #ebc95b;
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.25rem 1.75rem;
+}
+
+.nav {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.item {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: $gold;
+  }
+
+  &.active {
+    color: $gold;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 0.75rem 1rem;
+  }
+
+  .nav {
+    gap: 0.85rem;
+  }
+
+  .item {
+    font-size: 0.85rem;
+  }
+}

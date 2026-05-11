@@ -1,11 +1,12 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Projects from '../../components/Projects/Projects'
+import Footer from '../../components/Footer/Footer'
 import styles from '../../styles/Home.module.scss'
 
 const ProjectsPage: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Projects - Bryant</title>
         <meta name="description" content="Explore Bryant's portfolio of projects and creative work" />
@@ -13,12 +14,13 @@ const ProjectsPage: NextPage = () => {
       </Head>
       <main className={styles.main}>
         <div className={styles.projectsHeader}>
-          <h1 className={styles.projectsTitle}>My Projects</h1>
-          <p className={styles.projectsSubtitle}>A collection of my creative work and technical projects</p>
+          <h1 className={styles.projectsTitle}>Projects</h1>
+          <p className={styles.projectsSubtitle}>A selection of personal and side projects.</p>
         </div>
         <Projects />
       </main>
-    </div>
+      <Footer />
+    </>
   )
 }
 

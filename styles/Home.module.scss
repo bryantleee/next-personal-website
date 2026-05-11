@@ -88,6 +88,25 @@
   padding-top: 7rem;
 }
 
+.projectsHeader {
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+}
+
+.projectsTitle {
+  margin: 0 0 0.5rem;
+  font-size: 2.75rem;
+  color: #ffffff;
+}
+
+.projectsSubtitle {
+  margin: 0 auto;
+  max-width: 640px;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: #cccccc;
+}
+
 .path {
   stroke-dasharray: 100;
   animation: dash 5s linear;

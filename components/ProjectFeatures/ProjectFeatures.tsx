@@ -1,14 +1,14 @@
-import React from 'react'
+import React from "react";
 
 type Feature = {
-  title: string
-  description: string
-  icon?: string
-}
+  title: string;
+  description: string;
+  icon?: string;
+};
 
 type Props = {
-  features: Feature[]
-}
+  features: Feature[];
+};
 
 const ProjectFeatures: React.FC<Props> = ({ features }) => {
   return (
@@ -23,12 +23,8 @@ const ProjectFeatures: React.FC<Props> = ({ features }) => {
         ))}
       </ul>
     </section>
-  )
-}
+  );
+};
 
-export default ProjectFeatures
-
-
-
-
+export default ProjectFeatures;
 
