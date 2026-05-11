@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Footer from '../../../components/Footer/Footer'
 import Seo from '../../../components/Seo/Seo'
 import styles from '../../../styles/Home.module.scss'
+import projectStyles from '../../../styles/ProjectPage.module.scss'
 
 const BLOBBO_DESCRIPTION =
   'An original homebrew Nintendo Game Boy game built in C with GBDK 2020, with a physical cartridge release.'
@@ -33,61 +34,54 @@ const BlobboAppleCatch: NextPage = () => {
             Nintendo Game Boy homebrew game
           </p>
         </div>
-        <div
-          style={{
-            padding: '0 2rem 3rem',
-            maxWidth: '800px',
-            margin: '0 auto',
-            color: '#ffffff',
-          }}
-        >
-          <div style={{ marginBottom: '2rem', textAlign: 'center' }}>
+        <div className={projectStyles.content}>
+          <div className={projectStyles.hero}>
             <Image
               src="/blobbo-apple-catch.webp"
               alt="Blobbo's Apple Catch on a Game Boy"
               width={3024}
               height={4032}
-              style={{ width: '100%', maxWidth: '500px', height: 'auto', borderRadius: 8 }}
+              className={`${projectStyles.heroImage} ${projectStyles.heroImageNarrow}`}
             />
           </div>
 
-          <h2 style={{ color: '#ebc95b', marginBottom: '1rem' }}>About</h2>
-          <p style={{ marginBottom: '1.5rem', lineHeight: '1.6' }}>
+          <h2 className={projectStyles.sectionHeading}>About</h2>
+          <p className={projectStyles.body}>
             Blobbo&apos;s Apple Catch is an original homebrew game for the Nintendo Game Boy.
             The player guides Blobbo and his basket to catch falling apples while dodging
             spiders, all running on real Game Boy hardware.
           </p>
 
-          <h3 style={{ color: '#ebc95b', marginBottom: '1rem' }}>Highlights</h3>
-          <ul style={{ marginBottom: '1.5rem', paddingLeft: '1.5rem', lineHeight: '1.7' }}>
-            <li style={{ marginBottom: '0.5rem' }}>
+          <h3 className={projectStyles.sectionHeading}>Highlights</h3>
+          <ul className={projectStyles.list}>
+            <li className={projectStyles.listItem}>
               Written in C using{' '}
               <a
                 href="https://github.com/gbdk-2020/gbdk-2020"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: '#ebc95b', textDecoration: 'underline' }}
+                className={projectStyles.link}
               >
                 GBDK 2020
               </a>
               ; compiles to a ROM playable on original Game Boy hardware, emulators, and
               the Analogue Pocket.
             </li>
-            <li style={{ marginBottom: '0.5rem' }}>
+            <li className={projectStyles.listItem}>
               Custom Super Game Boy border for an enhanced presentation when played on a
               Super Nintendo.
             </li>
-            <li style={{ marginBottom: '0.5rem' }}>
+            <li className={projectStyles.listItem}>
               Hand-drawn pixel art, sprites, and tile graphics designed for the Game Boy&apos;s
               4-color palette and 8x8 tile constraints.
             </li>
-            <li style={{ marginBottom: '0.5rem' }}>
+            <li className={projectStyles.listItem}>
               Released as a{' '}
               <a
                 href="https://drive.google.com/file/d/1SuSRxeb4GMKE__AFbagq8SFiUG_N7MgH/view"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: '#ebc95b', textDecoration: 'underline' }}
+                className={projectStyles.link}
               >
                 physical cartridge
               </a>
@@ -96,19 +90,19 @@ const BlobboAppleCatch: NextPage = () => {
                 href="https://carolynetan.squarespace.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: '#ebc95b', textDecoration: 'underline' }}
+                className={projectStyles.link}
               >
                 Carolyne Tan
               </a>
               .
             </li>
-            <li style={{ marginBottom: '0.5rem' }}>
+            <li className={projectStyles.listItem}>
               Open source on{' '}
               <a
                 href="https://github.com/bryantleee/blobbos-apple-catch"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: '#ebc95b', textDecoration: 'underline' }}
+                className={projectStyles.link}
               >
                 GitHub
               </a>

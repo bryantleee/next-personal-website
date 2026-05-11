@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Footer from '../components/Footer/Footer'
-import Construction from '../components/Construction/Construction'
+import Intro from '../components/Intro/Intro'
 import BryantLogo from '../components/BryantLogo/BryantLogo'
 import Seo from '../components/Seo/Seo'
 import styles from '../styles/Home.module.scss'
@@ -30,7 +30,7 @@ const Home: NextPage = () => {
           <BryantLogo />
         </div>
 
-        <Construction/>
+        <Intro/>
       </main>
       <Footer/>
     </>
