@@ -1,20 +1,31 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
 import Image from 'next/image'
 import Footer from '../../../components/Footer/Footer'
+import Seo from '../../../components/Seo/Seo'
 import styles from '../../../styles/Home.module.scss'
+
+const BLOBBO_DESCRIPTION =
+  'An original homebrew Nintendo Game Boy game built in C with GBDK 2020, with a physical cartridge release.'
 
 const BlobboAppleCatch: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Blobbo&apos;s Apple Catch - Bryant</title>
-        <meta
-          name="description"
-          content="An original homebrew Nintendo Game Boy game built in C with GBDK 2020, with a physical cartridge release."
-        />
-        <link rel="icon" href="/favicon.svg" />
-      </Head>
+      <Seo
+        title="Blobbo's Apple Catch | Bryant Lee"
+        description={BLOBBO_DESCRIPTION}
+        path="/projects/blobbo-apple-catch"
+        image="/blobbo-apple-catch.webp"
+        type="article"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'CreativeWork',
+          name: "Blobbo's Apple Catch",
+          description: BLOBBO_DESCRIPTION,
+          image: 'https://www.bryant.li/blobbo-apple-catch.webp',
+          author: { '@type': 'Person', name: 'Bryant Lee' },
+          url: 'https://www.bryant.li/projects/blobbo-apple-catch',
+        }}
+      />
       <main className={styles.main}>
         <div className={styles.projectsHeader}>
           <h1 className={styles.projectsTitle}>Blobbo&apos;s Apple Catch</h1>

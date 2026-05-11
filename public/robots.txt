@@ -62,3 +62,5 @@ Disallow: /
 
 User-agent: YouBot
 Disallow: /
+
+Sitemap: https://www.bryant.li/sitemap.xml
