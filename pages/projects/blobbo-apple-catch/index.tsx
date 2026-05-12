@@ -1,9 +1,15 @@
 import type { NextPage } from 'next'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Footer from '../../../components/Footer/Footer'
 import Seo from '../../../components/Seo/Seo'
 import styles from '../../../styles/Home.module.scss'
 import projectStyles from '../../../styles/ProjectPage.module.scss'
+
+const GameBoyEmulator = dynamic(
+  () => import('../../../components/GameBoyEmulator/GameBoyEmulator'),
+  { ssr: false }
+)
 
 const BLOBBO_DESCRIPTION =
   'An original homebrew Nintendo Game Boy game built in C with GBDK 2020, with a physical cartridge release.'
@@ -109,6 +115,9 @@ const BlobboAppleCatch: NextPage = () => {
               ; ROM downloads available on the Releases page.
             </li>
           </ul>
+
+          <h2 className={projectStyles.sectionHeading}>Play it here</h2>
+          <GameBoyEmulator />
         </div>
       </main>
       <Footer />
