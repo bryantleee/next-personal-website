@@ -17,7 +17,7 @@ const ALL_BUTTONS: Button[] = [
   'SELECT',
 ]
 
-type Status = 'loading' | 'ready' | 'playing' | 'paused' | 'error'
+type Status = 'idle' | 'loading' | 'playing' | 'paused' | 'error'
 
 export default function GameBoyEmulator() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -35,69 +35,12 @@ export default function GameBoyEmulator() {
     SELECT: false,
   })
 
-  const [status, setStatus] = useState<Status>('loading')
+  const [status, setStatus] = useState<Status>('idle')
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
   const [gameboyMode, setGameboyMode] = useState(false)
 
   useEffect(() => {
-    let cancelled = false
-
-    async function init() {
-      try {
-        const { WasmBoy } = await import('wasmboy')
-        if (cancelled || !canvasRef.current) return
-
-        wasmBoyRef.current = WasmBoy
-
-        await WasmBoy.config(
-          {
-            headless: false,
-            useGbcWhenOptional: false,
-            isAudioEnabled: true,
-            frameSkip: 0,
-            audioBatchProcessing: true,
-            timersBatchProcessing: false,
-            audioAccumulateSamples: true,
-            graphicsBatchProcessing: false,
-            graphicsDisableScanlineRendering: false,
-            tileRendering: true,
-            tileCaching: true,
-            gameboyFPSCap: 60,
-          },
-          canvasRef.current
-        )
-
-        WasmBoy.ResponsiveGamepad.addPlugin({
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          onGetState: (state: Record<string, any>) => {
-            const touch = touchStateRef.current
-            for (const btn of ALL_BUTTONS) {
-              if (touch[btn]) state[btn] = true
-            }
-            return state
-          },
-        })
-
-        const response = await fetch(ROM_URL)
-        if (!response.ok) {
-          throw new Error(`ROM fetch failed: ${response.status}`)
-        }
-        const buffer = await response.arrayBuffer()
-        await WasmBoy.loadROM(new Uint8Array(buffer))
-
-        if (cancelled) return
-        setStatus('ready')
-      } catch (err) {
-        if (cancelled) return
-        setStatus('error')
-        setErrorMessage(err instanceof Error ? err.message : String(err))
-      }
-    }
-
-    init()
-
     return () => {
-      cancelled = true
       const wb = wasmBoyRef.current
       if (wb?.pause) {
         try {
@@ -108,6 +51,52 @@ export default function GameBoyEmulator() {
       }
     }
   }, [])
+
+  const ensureLoaded = async () => {
+    if (wasmBoyRef.current) return wasmBoyRef.current
+    if (!canvasRef.current) return null
+
+    const { WasmBoy } = await import('wasmboy')
+    wasmBoyRef.current = WasmBoy
+
+    await WasmBoy.config(
+      {
+        headless: false,
+        useGbcWhenOptional: false,
+        isAudioEnabled: true,
+        frameSkip: 0,
+        audioBatchProcessing: true,
+        timersBatchProcessing: false,
+        audioAccumulateSamples: true,
+        graphicsBatchProcessing: false,
+        graphicsDisableScanlineRendering: false,
+        tileRendering: true,
+        tileCaching: true,
+        gameboyFPSCap: 60,
+      },
+      canvasRef.current
+    )
+
+    WasmBoy.ResponsiveGamepad.addPlugin({
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      onGetState: (state: Record<string, any>) => {
+        const touch = touchStateRef.current
+        for (const btn of ALL_BUTTONS) {
+          if (touch[btn]) state[btn] = true
+        }
+        return state
+      },
+    })
+
+    const response = await fetch(ROM_URL)
+    if (!response.ok) {
+      throw new Error(`ROM fetch failed: ${response.status}`)
+    }
+    const buffer = await response.arrayBuffer()
+    await WasmBoy.loadROM(new Uint8Array(buffer))
+
+    return WasmBoy
+  }
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
@@ -151,14 +140,18 @@ export default function GameBoyEmulator() {
   }, [gameboyMode])
 
   const handlePlay = async () => {
-    const wb = wasmBoyRef.current
-    if (!wb) return
     try {
+      if (!wasmBoyRef.current) {
+        setStatus('loading')
+      }
+      const wb = await ensureLoaded()
+      if (!wb) return
       if (wb.resumeAudioContext) await wb.resumeAudioContext()
       await wb.play()
       setStatus('playing')
-    } catch {
-      /* ignore */
+    } catch (err) {
+      setStatus('error')
+      setErrorMessage(err instanceof Error ? err.message : String(err))
     }
   }
 
@@ -173,7 +166,7 @@ export default function GameBoyEmulator() {
     const wb = wasmBoyRef.current
     if (!wb) return
     await wb.reset()
-    setStatus('ready')
+    setStatus('paused')
   }
 
   const press = (btn: Button) => (e: ReactPointerEvent<HTMLButtonElement>) => {
@@ -218,8 +211,8 @@ export default function GameBoyEmulator() {
               onClick={handlePlay}
               disabled={status === 'loading' || status === 'error'}
             >
+              {status === 'idle' && '▶ Play'}
               {status === 'loading' && 'Loading…'}
-              {status === 'ready' && '▶ Play'}
               {status === 'paused' && '▶ Resume'}
               {status === 'error' && (errorMessage ?? 'Failed to load ROM')}
             </button>
@@ -324,7 +317,7 @@ export default function GameBoyEmulator() {
           type="button"
           className={styles.controlButton}
           onClick={handleReset}
-          disabled={status === 'loading' || status === 'error'}
+          disabled={status === 'idle' || status === 'loading' || status === 'error'}
         >
           Reset
         </button>
