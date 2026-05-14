@@ -47,6 +47,8 @@ const BlobboAppleCatch: NextPage = () => {
               alt="Blobbo's Apple Catch on a Game Boy"
               width={3024}
               height={4032}
+              priority
+              sizes="(max-width: 768px) 100vw, 600px"
               className={`${projectStyles.heroImage} ${projectStyles.heroImageNarrow}`}
             />
           </div>

@@ -41,6 +41,8 @@ const HomeLab: NextPage = () => {
               alt="Home lab rack"
               width={1066}
               height={1600}
+              priority
+              sizes="(max-width: 768px) 100vw, 800px"
               className={projectStyles.heroImage}
             />
           </div>
