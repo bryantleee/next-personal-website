@@ -33,4 +33,12 @@ export const projects: ProjectSummary[] = [
       'A homebrew game compiling to Nintendo Game Boy, Game Gear, and Analogue Pocket, with a physical cartridge release.',
     imageUrl: '/blobbo-apple-catch.webp',
   },
+  {
+    slug: 'desktop-pc',
+    title: 'Desktop PC',
+    subtitle: 'Dual-GPU workstation and gaming build',
+    blurb:
+      'Dual-GPU desktop running an i9-12900K with a 3090 Ti and 2080 Ti. Built for 4K gaming, capture, and CUDA workloads, on Noctua air cooling in a Corsair 4000D Airflow.',
+    imageUrl: '/desktop-pc.webp',
+  },
 ]
