@@ -6,7 +6,7 @@ export interface ProjectSummary {
   imageUrl?: string
 }
 
-// QuizHaus, Cost Tracker, and sam3d Local Service pages live on the
+// QuizHaus and sam3d Local Service pages live on the
 // `unreleased-projects` branch until they're ready to ship.
 export const projects: ProjectSummary[] = [
   {
@@ -40,5 +40,13 @@ export const projects: ProjectSummary[] = [
     blurb:
       'Dual-GPU desktop running an i9-12900K with a 3090 Ti and 2080 Ti. Built for 4K gaming, capture, and CUDA workloads, on Noctua air cooling in a Corsair 4000D Airflow.',
     imageUrl: '/desktop-pc.webp',
+  },
+  {
+    slug: 'expense-tracker',
+    title: 'Expense Tracker',
+    subtitle: 'Automated personal-finance pipeline',
+    blurb:
+      'A self-hosted finance pipeline that scrapes Chase and Amazon emails over IMAP, matches charges to line-item Amazon orders, and exposes the data to LLM agents over MCP.',
+    imageUrl: '/expense-tracker.webp',
   },
 ]
