@@ -1,0 +1,125 @@
+import type { NextPage } from "next";
+import Image from "next/image";
+import Footer from "../../../components/Footer/Footer";
+import Seo from "../../../components/Seo/Seo";
+import styles from "../../../styles/Home.module.scss";
+import projectStyles from "../../../styles/ProjectPage.module.scss";
+
+const EXPENSE_TRACKER_DESCRIPTION =
+  "Automated expense tracking that scrapes Chase and Amazon emails, matches charges to line-item orders, and exposes the data to LLM agents over MCP.";
+
+const ExpenseTracker: NextPage = () => {
+  return (
+    <>
+      <Seo
+        title="Expense Tracker | Bryant Lee"
+        description={EXPENSE_TRACKER_DESCRIPTION}
+        path="/projects/expense-tracker"
+        image="/expense-tracker.webp"
+        type="article"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          name: "Expense Tracker",
+          description: EXPENSE_TRACKER_DESCRIPTION,
+          image: "https://www.bryant.li/expense-tracker.webp",
+          author: { "@type": "Person", name: "Bryant Lee" },
+          url: "https://www.bryant.li/projects/expense-tracker",
+        }}
+      />
+      <main className={styles.main}>
+        <div className={styles.projectsHeader}>
+          <h1 className={styles.projectsTitle}>Expense Tracker</h1>
+          <p className={styles.projectsSubtitle}>
+            Automated personal-finance pipeline
+          </p>
+        </div>
+        <div className={projectStyles.content}>
+          <div className={projectStyles.hero}>
+            <Image
+              src="/expense-tracker.webp"
+              alt="Expense Tracker architecture diagram"
+              width={1200}
+              height={260}
+              priority
+              sizes="(max-width: 768px) 100vw, 900px"
+              className={projectStyles.heroImage}
+            />
+          </div>
+
+          <h2 className={projectStyles.sectionHeading}>About</h2>
+          <p className={projectStyles.body}>
+            I built a personal expense tracker to track credit card expenses. I
+            setup my credit cards to send transaction emails to my Gmail
+            account, for each purpose. It is a self-hosted, personal-finance
+            pipeline that ingests bank and order emails from Gmail over IMAP,
+            links each charge to the actual items purchased, and presents the
+            result through a Flask dashboard and an MCP server. The MCP layer is
+            the interesting part: any agent (Claude Code, a local LLM, a custom
+            assistant) can ask &quot;how much did I spend on groceries last
+            month?&quot; or &quot;what was on that $84 Amazon order from April
+            3rd?&quot; without going through HTTP plumbing.
+          </p>
+
+          <h2 className={projectStyles.sectionHeading}>Pipeline</h2>
+          <ul className={projectStyles.list}>
+            <li className={projectStyles.listItem}>
+              <strong>Scrape</strong>: fetches Chase transaction alerts and
+              Amazon order confirmations from Gmail over IMAP. An IMAP IDLE
+              watcher thread triggers the pipeline whenever a new Chase email
+              arrives, so the dashboard is up to date within seconds of a swipe.
+            </li>
+            <li className={projectStyles.listItem}>
+              <strong>Parse</strong>: extracts amount, merchant, card, and date
+              from Chase emails; pulls per-item line entries from Amazon orders.
+            </li>
+            <li className={projectStyles.listItem}>
+              <strong>Match</strong>: links charges to Amazon orders by amount,
+              within a 3-day-before to 45-day-after window (Amazon often charges
+              on ship, not order).
+            </li>
+            <li className={projectStyles.listItem}>
+              <strong>Categorize</strong>: assigns categories based on merchant
+              and, for Amazon, the item names.
+            </li>
+            <li className={projectStyles.listItem}>
+              <strong>Store</strong>: persists to SQLite; supports manual
+              recategorization, returned-item tracking, and shared-expense
+              splits.
+            </li>
+          </ul>
+
+          <h2 className={projectStyles.sectionHeading}>Highlights</h2>
+          <ul className={projectStyles.list}>
+            <li className={projectStyles.listItem}>
+              MCP server (<code>mcp_server.py</code>) exposes the full data
+              model as typed tools: list transactions, summarize by category or
+              card, fetch a full Amazon order with line items, mark returns, set
+              splits, and trigger backfills. A{" "}
+              <code>cost-tracker://schema</code> resource exposes the SQLite
+              schema for ad-hoc agent queries.
+            </li>
+            <li className={projectStyles.listItem}>
+              Flask dashboard with monthly views, per-category and per-card
+              summaries, and date-range filtering. The same backend serves a
+              REST API protected by an API key.
+            </li>
+            <li className={projectStyles.listItem}>
+              Backfill mode walks up to five years of historical emails in one
+              pass; an Apple Card CSV importer handles the one card whose
+              statements don&apos;t come over email.
+            </li>
+            <li className={projectStyles.listItem}>
+              Containerized with Docker Compose; runs on the OpenClaw Server and
+              publishes status changes over MQTT so other home services can
+              react.
+            </li>
+          </ul>
+        </div>
+      </main>
+      <Footer />
+    </>
+  );
+};
+
+export default ExpenseTracker;
