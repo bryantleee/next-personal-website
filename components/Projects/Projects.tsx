@@ -6,7 +6,7 @@ import { projects } from './projectsData'
 const Projects = () => {
   return (
     <div className={styles.grid}>
-      {projects.map((project) => (
+      {projects.map((project, index) => (
         <Link
           key={project.slug}
           href={`/projects/${project.slug}`}
@@ -19,6 +19,7 @@ const Projects = () => {
                 alt={project.title}
                 width={600}
                 height={340}
+                loading={index < 2 ? 'eager' : 'lazy'}
               />
             </div>
           ) : (
