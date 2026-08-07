@@ -12,7 +12,7 @@
     "strip:photos": "node scripts/strip-image-metadata.mjs"
   },
   "dependencies": {
-    "next": "^16.2.6",
+    "next": "^16.2.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "wasmboy": "^0.7.1"
@@ -27,11 +27,14 @@
     "typescript": "^5.9.3"
   },
   "resolutions": {
-    "postcss": "^8.5.10",
+    "postcss": "^8.5.23",
     "picomatch": "^4.0.4",
     "flatted": "^3.4.2",
-    "immutable": "^5.1.5",
-    "js-yaml": "^4.1.1",
-    "minimatch": "^9.0.7"
+    "immutable": "^5.1.8",
+    "js-yaml": "^4.3.1",
+    "minimatch": "^9.0.7",
+    "brace-expansion": "^2.1.4",
+    "ajv": "^6.14.0",
+    "sharp": "^0.35.0"
   }
 }
