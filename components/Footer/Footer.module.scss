@@ -1,3 +1,5 @@
+$gold: #ebc95b;
+
 .footer {
   background-color: #000000;
 
@@ -5,7 +7,7 @@
     display: flex;
     flex: 1;
     padding: 2rem 0;
-    border-top: 1px solid #ebc95b;
+    border-top: 1px solid $gold;
     justify-content: center;
     align-items: center;
     background-color: #000000;
@@ -18,6 +20,17 @@
       align-items: center;
       margin-left: 1.25rem;
       margin-right: 1.25rem;
+
+      // ponytail: the CSS fill property beats the SVGs' fill="#ffffff" attribute
+      svg {
+        fill: #ffffff;
+        transition: fill 0.15s ease;
+      }
+
+      &:hover svg,
+      &:focus-visible svg {
+        fill: $gold;
+      }
     }
   }
 }
