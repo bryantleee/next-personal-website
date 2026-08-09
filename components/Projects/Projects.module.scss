@@ -30,8 +30,20 @@
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
-  background-color: #000;
+  background: linear-gradient(90deg, #1c1c1c 25%, #3a3a3a 50%, #1c1c1c 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
   overflow: hidden;
+
+  // some thumbnails have alpha, so the skeleton must stop once the image is in
+  &.loaded {
+    animation: none;
+    background: #000;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 
   img {
     width: 100%;
@@ -72,6 +84,12 @@
   font-size: 0.95rem;
   line-height: 1.5;
   color: #ccc;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
 }
 
 @media (max-width: 600px) {
