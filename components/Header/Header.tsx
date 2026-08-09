@@ -24,15 +24,24 @@ const Header = () => {
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <nav className={styles.nav}>
-        {links.map(({ href, label }) => (
-          <Link
-            key={href}
-            href={href}
-            className={`${styles.item} ${router.pathname === href ? styles.active : ''}`}
-          >
-            {label}
-          </Link>
-        ))}
+        {links.map(({ href, label }) => {
+          // `/projects/home-lab` should keep the Projects link lit. The `/`
+          // suffix keeps href="/" from matching every page.
+          const isCurrentPage = router.pathname === href
+          const isActive =
+            isCurrentPage || router.pathname.startsWith(`${href}/`)
+          return (
+            <Link
+              key={href}
+              href={href}
+              // "page" only when it really is the page; "true" for a section.
+              aria-current={isCurrentPage ? 'page' : isActive || undefined}
+              className={`${styles.item} ${isActive ? styles.active : ''}`}
+            >
+              {label}
+            </Link>
+          )
+        })}
       </nav>
     </header>
   )
