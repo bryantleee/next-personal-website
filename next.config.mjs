@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
-const path = require('path')
+import { dirname, join } from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const rootDirectory = dirname(fileURLToPath(import.meta.url))
 
 const IMMUTABLE_PUBLIC_FILES = [
   'blobbos-apple-catch.gb',
@@ -36,7 +39,7 @@ const SECURITY_HEADERS = [
 const nextConfig = {
   reactStrictMode: true,
   sassOptions: {
-    includePaths: [path.join(__dirname, 'styles')],
+    includePaths: [join(rootDirectory, 'styles')],
   },
   images: {
     formats: ['image/avif', 'image/webp'],
@@ -58,4 +61,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+export default nextConfig
