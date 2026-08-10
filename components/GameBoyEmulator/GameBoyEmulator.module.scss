@@ -179,6 +179,24 @@ $fade: 700ms ease;
   text-align: center;
 }
 
+.error {
+  margin: 0.75rem 0 0;
+  color: #ff9a9a;
+  text-align: center;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .touchOverlay {
   display: none;
   width: 100%;
@@ -221,6 +239,11 @@ $fade: 700ms ease;
     border-color $fade,
     color $fade,
     box-shadow $fade;
+}
+
+.touchBtn:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
 }
 
 .dpadUp,
