@@ -1,8 +1,5 @@
 import Head from 'next/head'
-
-const SITE_URL = 'https://www.bryant.li'
-const SITE_NAME = 'Bryant Lee'
-const DEFAULT_OG_IMAGE = '/bryant-1-optimized.svg'
+import { DEFAULT_SOCIAL_IMAGE, SITE_NAME, SITE_URL } from '../../data/site'
 
 type SeoProps = {
   title: string
@@ -17,7 +14,7 @@ const Seo = ({
   title,
   description,
   path,
-  image = DEFAULT_OG_IMAGE,
+  image = DEFAULT_SOCIAL_IMAGE,
   type = 'website',
   jsonLd,
 }: SeoProps) => {

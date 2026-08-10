@@ -1,9 +1,7 @@
 import type { NextPage } from 'next'
 import dynamic from 'next/dynamic'
-import Image from 'next/image'
-import Footer from '../../../components/Footer/Footer'
-import Seo from '../../../components/Seo/Seo'
-import styles from '../../../styles/Home.module.scss'
+import ProjectPage from '../../../components/ProjectPage/ProjectPage'
+import { getProject } from '../../../data/projects'
 import projectStyles from '../../../styles/ProjectPage.module.scss'
 
 const GameBoyEmulator = dynamic(
@@ -11,48 +9,11 @@ const GameBoyEmulator = dynamic(
   { ssr: false }
 )
 
-const BLOBBO_DESCRIPTION =
-  'An original homebrew Nintendo Game Boy game built in C with GBDK 2020, with a physical cartridge release.'
+const project = getProject('blobbo-apple-catch')
 
 const BlobboAppleCatch: NextPage = () => {
   return (
-    <>
-      <Seo
-        title="Blobbo's Apple Catch | Bryant Lee"
-        description={BLOBBO_DESCRIPTION}
-        path="/projects/blobbo-apple-catch"
-        image="/blobbo-apple-catch.webp"
-        type="article"
-        jsonLd={{
-          '@context': 'https://schema.org',
-          '@type': 'CreativeWork',
-          name: "Blobbo's Apple Catch",
-          description: BLOBBO_DESCRIPTION,
-          image: 'https://www.bryant.li/blobbo-apple-catch.webp',
-          author: { '@type': 'Person', name: 'Bryant Lee' },
-          url: 'https://www.bryant.li/projects/blobbo-apple-catch',
-        }}
-      />
-      <main className={styles.main}>
-        <div className={styles.projectsHeader}>
-          <h1 className={styles.projectsTitle}>Blobbo&apos;s Apple Catch</h1>
-          <p className={styles.projectsSubtitle}>
-            Nintendo Game Boy homebrew game
-          </p>
-        </div>
-        <div className={projectStyles.content}>
-          <div className={projectStyles.hero}>
-            <Image
-              src="/blobbo-apple-catch.webp"
-              alt="Blobbo's Apple Catch on a Game Boy"
-              width={3024}
-              height={4032}
-              priority
-              sizes="(max-width: 768px) 100vw, 600px"
-              className={`${projectStyles.heroImage} ${projectStyles.heroImageNarrow}`}
-            />
-          </div>
-
+    <ProjectPage project={project}>
           <h2 className={projectStyles.sectionHeading}>About</h2>
           <p className={projectStyles.body}>
             Blobbo&apos;s Apple Catch is an original homebrew game for the Nintendo Game Boy.
@@ -120,10 +81,7 @@ const BlobboAppleCatch: NextPage = () => {
 
           <h2 className={projectStyles.sectionHeading}>Play it here</h2>
           <GameBoyEmulator />
-        </div>
-      </main>
-      <Footer />
-    </>
+    </ProjectPage>
   )
 }
 

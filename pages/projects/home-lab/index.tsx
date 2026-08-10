@@ -1,52 +1,13 @@
 import type { NextPage } from "next";
-import Image from "next/image";
-import Footer from "../../../components/Footer/Footer";
-import Seo from "../../../components/Seo/Seo";
-import styles from "../../../styles/Home.module.scss";
+import ProjectPage from "../../../components/ProjectPage/ProjectPage";
+import { getProject } from "../../../data/projects";
 import projectStyles from "../../../styles/ProjectPage.module.scss";
 
-const HOME_LAB_DESCRIPTION =
-  "A self-hosted, multi-node homelab running Docker, observability, and home automation stacks.";
+const project = getProject("home-lab");
 
 const HomeLab: NextPage = () => {
   return (
-    <>
-      <Seo
-        title="Home Lab | Bryant Lee"
-        description={HOME_LAB_DESCRIPTION}
-        path="/projects/home-lab"
-        image="/home-lab.webp"
-        type="article"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "CreativeWork",
-          name: "Home Lab",
-          description: HOME_LAB_DESCRIPTION,
-          image: "https://www.bryant.li/home-lab.webp",
-          author: { "@type": "Person", name: "Bryant Lee" },
-          url: "https://www.bryant.li/projects/home-lab",
-        }}
-      />
-      <main className={styles.main}>
-        <div className={styles.projectsHeader}>
-          <h1 className={styles.projectsTitle}>Home Lab</h1>
-          <p className={styles.projectsSubtitle}>
-            Self-Hosted Infrastructure &amp; Networking
-          </p>
-        </div>
-        <div className={projectStyles.content}>
-          <div className={projectStyles.hero}>
-            <Image
-              src="/home-lab.webp"
-              alt="Home lab rack"
-              width={1066}
-              height={1600}
-              priority
-              sizes="(max-width: 768px) 100vw, 800px"
-              className={projectStyles.heroImage}
-            />
-          </div>
-
+    <ProjectPage project={project}>
           <h2 className={projectStyles.sectionHeading}>About</h2>
           <p className={projectStyles.body}>
             A self-hosted home network built from three Linux machines, a
@@ -136,10 +97,7 @@ const HomeLab: NextPage = () => {
               server.
             </li>
           </ul>
-        </div>
-      </main>
-      <Footer />
-    </>
+    </ProjectPage>
   );
 };
 

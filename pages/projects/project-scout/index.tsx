@@ -1,52 +1,13 @@
 import type { NextPage } from "next";
-import Image from "next/image";
-import Footer from "../../../components/Footer/Footer";
-import Seo from "../../../components/Seo/Seo";
-import styles from "../../../styles/Home.module.scss";
+import ProjectPage from "../../../components/ProjectPage/ProjectPage";
+import { getProject } from "../../../data/projects";
 import projectStyles from "../../../styles/ProjectPage.module.scss";
 
-const SCOUT_DESCRIPTION =
-  "A scalable, internet-free monitoring system: edge AI on a Raspberry Pi 5 + Hailo NPU, alerting over a public LoRa mesh network.";
+const project = getProject("project-scout");
 
 const ProjectScout: NextPage = () => {
   return (
-    <>
-      <Seo
-        title="Project Scout | Bryant Lee"
-        description={SCOUT_DESCRIPTION}
-        path="/projects/project-scout"
-        image="/project-scout.webp"
-        type="article"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "CreativeWork",
-          name: "Project Scout",
-          description: SCOUT_DESCRIPTION,
-          image: "https://www.bryant.li/project-scout.webp",
-          author: { "@type": "Person", name: "Bryant Lee" },
-          url: "https://www.bryant.li/projects/project-scout",
-        }}
-      />
-      <main className={styles.main}>
-        <div className={styles.projectsHeader}>
-          <h1 className={styles.projectsTitle}>Project Scout</h1>
-          <p className={styles.projectsSubtitle}>
-            Offline AI-Powered Home Security System
-          </p>
-        </div>
-        <div className={projectStyles.content}>
-          <div className={projectStyles.hero}>
-            <Image
-              src="/project-scout.webp"
-              alt="Project Scout architecture diagram"
-              width={1200}
-              height={700}
-              priority
-              sizes="(max-width: 768px) 100vw, 900px"
-              className={projectStyles.heroImage}
-            />
-          </div>
-
+    <ProjectPage project={project}>
           <h2 className={projectStyles.sectionHeading}>Problem</h2>
           <p className={projectStyles.body}>
             Real-time AI-powered monitoring at a remote location usually
@@ -78,10 +39,7 @@ const ProjectScout: NextPage = () => {
               mesh.
             </li>
           </ul>
-        </div>
-      </main>
-      <Footer />
-    </>
+    </ProjectPage>
   );
 };
 
