@@ -14,6 +14,9 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "typecheck": "tsc --noEmit",
+    "test": "yarn generate:sitemap && vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
     "generate:sitemap": "node scripts/generate-sitemap.mjs",
     "test:photos": "node scripts/check-image-metadata.mjs",
     "strip:photos": "node scripts/strip-image-metadata.mjs"
@@ -25,13 +28,22 @@
     "wasmboy": "^0.7.1"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.12.1",
+    "@playwright/test": "^1.62.1",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "^16.3.2",
     "@types/node": "^20.19.0",
     "@types/react": "18.0.12",
     "@types/react-dom": "18.0.5",
     "eslint": "^9.39.1",
     "eslint-config-next": "^16.3.0",
+    "happy-dom": "^20.11.2",
+    "playwright-core": "^1.62.1",
     "sass": "^1.58.3",
     "sharp": "^0.35.3",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vite": "^6.4.1",
+    "vitest": "^3.2.4"
   }
 }
