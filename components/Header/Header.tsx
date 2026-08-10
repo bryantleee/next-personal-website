@@ -23,7 +23,7 @@ const Header = () => {
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
-      <nav className={styles.nav}>
+      <nav className={styles.nav} aria-label="Primary navigation">
         {links.map(({ href, label }) => {
           // `/projects/home-lab` should keep the Projects link lit. The `/`
           // suffix keeps href="/" from matching every page.

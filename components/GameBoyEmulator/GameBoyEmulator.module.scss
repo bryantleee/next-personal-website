@@ -158,6 +158,7 @@ $fade: 700ms ease;
   border: 1px solid #ebc95b;
   border-radius: 4px;
   padding: 0.4rem 1rem;
+  min-height: 44px;
   font: inherit;
   cursor: pointer;
   transition:
@@ -289,6 +290,7 @@ $fade: 700ms ease;
 .startSelectBtn {
   border-radius: 999px;
   padding: 0.4rem 1rem;
+  min-height: 44px;
   font-size: 0.8rem;
 }
 

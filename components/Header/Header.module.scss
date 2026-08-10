@@ -20,7 +20,8 @@ $gold: #ebc95b;
   text-decoration: none;
   transition: color 0.15s ease;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     color: $gold;
   }
 
@@ -91,7 +92,10 @@ $gold: #ebc95b;
 
   .item {
     font-size: 0.95rem;
-    padding: 0.25rem 0.5rem;
+    min-height: 44px;
+    padding: 0.25rem 0.75rem;
+    display: inline-flex;
+    align-items: center;
   }
 }
 

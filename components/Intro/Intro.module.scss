@@ -7,22 +7,22 @@
         font-weight: normal;
     }
 
-    h2 {
+    h1 {
         font-size: 25pt;
     }
 
-    h3 {
+    p {
         font-size: 15pt;
     }
 }
 
 @media (max-width: 800px) {
     .intro {
-        h2 {
+        h1 {
             font-size: 20pt;
         }
 
-        h3 {
+        p {
             font-size: 13pt;
             margin-left: 2rem;
             margin-right: 2rem;

@@ -23,7 +23,7 @@ const DesktopPc: NextPage = () => {
             tasks.
           </p>
 
-          <h3 className={projectStyles.sectionHeading}>Components</h3>
+          <h2 className={projectStyles.sectionHeading}>Components</h2>
           <ul className={projectStyles.list}>
             <li className={projectStyles.listItem}>
               <strong>CPU</strong>: Intel Core i9-12900K.

@@ -21,7 +21,7 @@ const BlobboAppleCatch: NextPage = () => {
             spiders, all running on real Game Boy hardware.
           </p>
 
-          <h3 className={projectStyles.sectionHeading}>Highlights</h3>
+          <h2 className={projectStyles.sectionHeading}>Highlights</h2>
           <ul className={projectStyles.list}>
             <li className={projectStyles.listItem}>
               Written in C using{' '}

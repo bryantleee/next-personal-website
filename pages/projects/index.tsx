@@ -12,7 +12,7 @@ const ProjectsPage: NextPage = () => {
         path="/projects"
         image="/home-lab.webp"
       />
-      <main className={styles.main}>
+      <main id="main-content" className={styles.main}>
         <div className={styles.projectsHeader}>
           <h1 className={styles.projectsTitle}>Projects</h1>
           <p className={styles.projectsSubtitle}>A selection of personal and side projects.</p>

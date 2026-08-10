@@ -24,12 +24,12 @@ const Home: NextPage = () => {
         }}
       />
 
-      <main className={styles.main}>
+      <main id="main-content" className={styles.main}>
         <div className={styles.logo_container}>
           <BryantLogo />
         </div>
 
-        <Intro/>
+        <Intro />
       </main>
     </>
   )
