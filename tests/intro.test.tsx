@@ -10,7 +10,7 @@ describe('Intro', () => {
       screen.getByRole('heading', {
         level: 1,
         name: 'Hello! My name is Bryant Lee.',
-      })
+      }),
     ).toBeInTheDocument()
     expect(container.querySelectorAll('p')).toHaveLength(3)
     expect(container.querySelector('h2, h3')).not.toBeInTheDocument()

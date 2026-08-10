@@ -76,7 +76,7 @@ describe('GameBoyEmulator', () => {
       vi
         .fn()
         .mockRejectedValueOnce(new Error('Network unavailable'))
-        .mockResolvedValueOnce(successfulRomResponse())
+        .mockResolvedValueOnce(successfulRomResponse()),
     )
     render(<GameBoyEmulator />)
 

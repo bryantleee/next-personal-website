@@ -20,6 +20,9 @@ const ProjectPage = ({ project, children }: ProjectPageProps) => {
         description={project.description}
         path={path}
         image={project.image.src}
+        imageAlt={project.image.alt}
+        imageWidth={project.image.width}
+        imageHeight={project.image.height}
         type="article"
         jsonLd={{
           '@context': 'https://schema.org',

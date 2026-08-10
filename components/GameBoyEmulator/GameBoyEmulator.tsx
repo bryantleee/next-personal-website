@@ -4,25 +4,12 @@ import type {
   KeyboardEvent as ReactKeyboardEvent,
   PointerEvent as ReactPointerEvent,
 } from 'react'
-import type {
-  WasmBoyApi,
-  WasmBoyButton,
-  WasmBoyControllerState,
-} from 'wasmboy'
+import type { WasmBoyApi, WasmBoyButton, WasmBoyControllerState } from 'wasmboy'
 import styles from './GameBoyEmulator.module.scss'
 
 const ROM_URL = '/blobbos-apple-catch.gb'
 
-const ALL_BUTTONS: WasmBoyButton[] = [
-  'UP',
-  'DOWN',
-  'LEFT',
-  'RIGHT',
-  'A',
-  'B',
-  'START',
-  'SELECT',
-]
+const ALL_BUTTONS: WasmBoyButton[] = ['UP', 'DOWN', 'LEFT', 'RIGHT', 'A', 'B', 'START', 'SELECT']
 
 type Status = 'idle' | 'loading' | 'playing' | 'paused' | 'error'
 
@@ -100,7 +87,7 @@ export default function GameBoyEmulator() {
           tileCaching: true,
           gameboyFPSCap: 60,
         },
-        canvas
+        canvas,
       )
 
       const removePlugin = WasmBoy.ResponsiveGamepad.addPlugin({
@@ -167,7 +154,7 @@ export default function GameBoyEmulator() {
           timer = null
         }
       },
-      { threshold: [0, 0.5, 1] }
+      { threshold: [0, 0.5, 1] },
     )
     observer.observe(el)
     return () => {
@@ -263,17 +250,15 @@ export default function GameBoyEmulator() {
     if (trapped.includes(event.code)) event.preventDefault()
   }
 
-  const press =
-    (btn: WasmBoyButton) => (e: ReactPointerEvent<HTMLButtonElement>) => {
-      e.preventDefault()
-      touchStateRef.current[btn] = true
-      e.currentTarget.setPointerCapture?.(e.pointerId)
-    }
-  const release =
-    (btn: WasmBoyButton) => (e: ReactPointerEvent<HTMLButtonElement>) => {
-      e.preventDefault()
-      touchStateRef.current[btn] = false
-    }
+  const press = (btn: WasmBoyButton) => (e: ReactPointerEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    touchStateRef.current[btn] = true
+    e.currentTarget.setPointerCapture?.(e.pointerId)
+  }
+  const release = (btn: WasmBoyButton) => (e: ReactPointerEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    touchStateRef.current[btn] = false
+  }
   const touchProps = (btn: WasmBoyButton) => ({
     disabled: status !== 'playing',
     onPointerDown: press(btn),
@@ -415,11 +400,7 @@ export default function GameBoyEmulator() {
 
       <div className={styles.controlsRow}>
         {status === 'playing' ? (
-          <button
-            type="button"
-            className={styles.controlButton}
-            onClick={handlePause}
-          >
+          <button type="button" className={styles.controlButton} onClick={handlePause}>
             Pause
           </button>
         ) : (

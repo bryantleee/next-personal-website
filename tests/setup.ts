@@ -7,7 +7,6 @@ afterEach(() => {
   vi.restoreAllMocks()
 })
 
-vi.stubGlobal(
-  'requestAnimationFrame',
-  (callback: FrameRequestCallback) => window.setTimeout(() => callback(performance.now()), 0)
+vi.stubGlobal('requestAnimationFrame', (callback: FrameRequestCallback) =>
+  window.setTimeout(() => callback(performance.now()), 0),
 )

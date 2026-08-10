@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/check-image-metadata.mjs && node scripts/generate-sitemap.mjs",
+    "prebuild": "node scripts/check-image-metadata.mjs && node scripts/generate-sitemap.mjs && node scripts/generate-social-image.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
@@ -18,6 +18,9 @@
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "generate:sitemap": "node scripts/generate-sitemap.mjs",
+    "generate:social": "node scripts/generate-social-image.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "test:photos": "node scripts/check-image-metadata.mjs",
     "strip:photos": "node scripts/strip-image-metadata.mjs"
   },
@@ -40,6 +43,7 @@
     "eslint-config-next": "^16.3.0",
     "happy-dom": "^20.11.2",
     "playwright-core": "^1.62.1",
+    "prettier": "^3.9.6",
     "sass": "^1.58.3",
     "sharp": "^0.35.3",
     "typescript": "^5.9.3",

@@ -1,31 +1,31 @@
 .intro {
-    text-align: center;
-    padding-bottom: 1rem;
+  text-align: center;
+  padding-bottom: 1rem;
 
-    &__text {
-        color: #ffffff;
-        font-weight: normal;
-    }
+  &__text {
+    color: #ffffff;
+    font-weight: normal;
+  }
 
-    h1 {
-        font-size: 25pt;
-    }
+  h1 {
+    font-size: 25pt;
+  }
 
-    p {
-        font-size: 15pt;
-    }
+  p {
+    font-size: 15pt;
+  }
 }
 
 @media (max-width: 800px) {
-    .intro {
-        h1 {
-            font-size: 20pt;
-        }
-
-        p {
-            font-size: 13pt;
-            margin-left: 2rem;
-            margin-right: 2rem;
-        }
+  .intro {
+    h1 {
+      font-size: 20pt;
     }
+
+    p {
+      font-size: 13pt;
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+  }
 }

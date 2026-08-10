@@ -21,7 +21,9 @@
   overflow: hidden;
   color: #fff;
   text-decoration: none;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
   width: 100%;
 
   &:hover,
@@ -61,12 +63,6 @@
     object-fit: cover;
     display: block;
   }
-}
-
-.thumbnailPlaceholder {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
 }
 
 .cardBody {

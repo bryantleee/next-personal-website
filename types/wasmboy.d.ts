@@ -1,13 +1,5 @@
 declare module 'wasmboy' {
-  export type WasmBoyButton =
-    | 'UP'
-    | 'DOWN'
-    | 'LEFT'
-    | 'RIGHT'
-    | 'A'
-    | 'B'
-    | 'START'
-    | 'SELECT'
+  export type WasmBoyButton = 'UP' | 'DOWN' | 'LEFT' | 'RIGHT' | 'A' | 'B' | 'START' | 'SELECT'
 
   export type WasmBoyControllerState = Record<string, boolean>
 

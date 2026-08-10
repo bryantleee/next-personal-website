@@ -4,15 +4,7 @@ import { useState } from 'react'
 import styles from './Projects.module.scss'
 import { projects } from '../../data/projects'
 
-const Thumbnail = ({
-  src,
-  alt,
-  eager,
-}: {
-  src: string
-  alt: string
-  eager: boolean
-}) => {
+const Thumbnail = ({ src, alt, eager }: { src: string; alt: string; eager: boolean }) => {
   const [loaded, setLoaded] = useState(false)
   return (
     <div className={`${styles.thumbnail} ${loaded ? styles.loaded : ''}`}>
@@ -34,11 +26,7 @@ const Projects = () => {
       {projects.map((project, index) => (
         <li key={project.slug} className={styles.cardItem}>
           <Link href={`/projects/${project.slug}`} className={styles.card}>
-            <Thumbnail
-              src={project.image.src}
-              alt={project.image.alt}
-              eager={index < 2}
-            />
+            <Thumbnail src={project.image.src} alt={project.image.alt} eager={index < 2} />
             <div className={styles.cardBody}>
               <h2 className={styles.cardTitle}>{project.title}</h2>
               <p className={styles.cardSubtitle}>{project.subtitle}</p>

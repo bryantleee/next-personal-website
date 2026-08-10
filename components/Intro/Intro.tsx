@@ -1,4 +1,4 @@
-import styles from "./Intro.module.scss";
+import styles from './Intro.module.scss'
 
 const Intro = () => {
   return (
@@ -8,15 +8,14 @@ const Intro = () => {
         I am a software engineer living in Manhattan, currently working at Meta.
       </p>
       <p className={styles.intro__text}>
-        Outside of work, I love homelabbing, trying new video games, and
-        exploring interesting places!
+        Outside of work, I love homelabbing, trying new video games, and exploring interesting
+        places!
       </p>
       <p className={styles.intro__text}>
-        Please feel free to reach out or find me on other platforms at the links
-        below!
+        Please feel free to reach out or find me on other platforms at the links below!
       </p>
     </section>
-  );
-};
+  )
+}
 
-export default Intro;
+export default Intro

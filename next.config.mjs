@@ -4,11 +4,7 @@ import { fileURLToPath } from 'node:url'
 
 const rootDirectory = dirname(fileURLToPath(import.meta.url))
 
-const IMMUTABLE_PUBLIC_FILES = [
-  'blobbos-apple-catch.gb',
-  'favicon.svg',
-  'bryant-1-optimized.svg',
-]
+const IMMUTABLE_PUBLIC_FILES = ['blobbos-apple-catch.gb', 'favicon.svg', 'bryant-1-optimized.svg']
 
 // blob: and 'wasm-unsafe-eval' are for WasmBoy, which runs the emulator core as
 // WebAssembly inside a Worker created from a blob URL. connect-src needs data:
@@ -53,9 +49,7 @@ const nextConfig = {
       },
       {
         source: `/:file(${IMMUTABLE_PUBLIC_FILES.join('|')})`,
-        headers: [
-          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
-        ],
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
       },
     ]
   },

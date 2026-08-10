@@ -1,20 +1,50 @@
-# Bryant's Personal Website
-This is my personal website, written with [NextJS](https://nextjs.org/). This is a work in progress!
+# Bryant Lee's Personal Website
 
-## Running locally
-First, run the development server:
+The source for [bryant.li](https://www.bryant.li), a statically generated portfolio built with Next.js, React, TypeScript, and Sass. It includes project write-ups and a browser-playable Game Boy homebrew game.
+
+## Requirements
+
+- Node.js 20.9 or newer
+- Yarn 1.22
+
+## Local development
 
 ```bash
-npm run dev
-# or
+yarn install --frozen-lockfile
 yarn dev
 ```
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. The page will auto-updates as you edit files.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Open [http://localhost:3000](http://localhost:3000).
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Quality checks
 
+```bash
+yarn lint          # ESLint
+yarn format:check  # Prettier
+yarn typecheck     # TypeScript
+yarn test          # Unit and component tests
+yarn test:photos   # Public-image metadata check
+yarn build         # Production build
+```
+
+Browser tests require Chromium once per machine. The test command builds and serves the production site automatically outside CI.
+
+```bash
+yarn playwright install chromium
+yarn test:e2e
+```
+
+## Content and generated assets
+
+Project metadata lives in [`data/projects.json`](data/projects.json). Cards, project SEO, structured data, and the sitemap derive from this catalog.
+
+```bash
+yarn generate:sitemap
+yarn generate:social
+```
+
+The production build runs both generators and rejects public raster images containing EXIF, IPTC, or XMP metadata. To strip revealing metadata from a new image, run `yarn strip:photos`.
 
 ## Deployment
-This website has been deployed with [Vercel](https://vercel.com/).
+
+The site is deployed on Vercel. Every route is statically generated; the CI workflow runs all quality checks and Chromium accessibility smoke tests before changes merge.
