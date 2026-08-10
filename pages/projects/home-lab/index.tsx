@@ -20,7 +20,7 @@ const HomeLab: NextPage = () => {
             nginx reverse proxy.
           </p>
 
-          <h3 className={projectStyles.sectionHeading}>Architecture</h3>
+          <h2 className={projectStyles.sectionHeading}>Architecture</h2>
           <ul className={projectStyles.list}>
             <li className={projectStyles.listItem}>
               <strong>Main Server</strong> (Intel N100, 16 GB, Debian 12): the
@@ -57,7 +57,7 @@ const HomeLab: NextPage = () => {
             </li>
           </ul>
 
-          <h3 className={projectStyles.sectionHeading}>Some Highlights</h3>
+          <h2 className={projectStyles.sectionHeading}>Some Highlights</h2>
           <ul className={projectStyles.list}>
             <li className={projectStyles.listItem}>
               Centralized observability: Prometheus, Grafana, Loki, and Promtail

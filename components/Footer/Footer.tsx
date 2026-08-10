@@ -46,7 +46,7 @@ const Footer = () => {
           href="https://github.com/bryantleee"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="GitHub"
+          aria-label="GitHub (opens in a new tab)"
         >
           <GithubIcon />
         </a>
@@ -55,15 +55,13 @@ const Footer = () => {
           href="https://www.linkedin.com/in/bryantleee/"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="LinkedIn"
+          aria-label="LinkedIn (opens in a new tab)"
         >
           <LinkedinIcon />
         </a>
 
         <a
           href="mailto:leezbrya@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
           aria-label="Email"
         >
           <EmailIcon />

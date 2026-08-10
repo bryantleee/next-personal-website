@@ -30,26 +30,24 @@ const Thumbnail = ({
 
 const Projects = () => {
   return (
-    <div className={styles.grid}>
+    <ul className={styles.grid}>
       {projects.map((project, index) => (
-        <Link
-          key={project.slug}
-          href={`/projects/${project.slug}`}
-          className={styles.card}
-        >
-          <Thumbnail
-            src={project.image.src}
-            alt={project.image.alt}
-            eager={index < 2}
-          />
-          <div className={styles.cardBody}>
-            <h2 className={styles.cardTitle}>{project.title}</h2>
-            <p className={styles.cardSubtitle}>{project.subtitle}</p>
-            <p className={styles.cardBlurb}>{project.blurb}</p>
-          </div>
-        </Link>
+        <li key={project.slug} className={styles.cardItem}>
+          <Link href={`/projects/${project.slug}`} className={styles.card}>
+            <Thumbnail
+              src={project.image.src}
+              alt={project.image.alt}
+              eager={index < 2}
+            />
+            <div className={styles.cardBody}>
+              <h2 className={styles.cardTitle}>{project.title}</h2>
+              <p className={styles.cardSubtitle}>{project.subtitle}</p>
+              <p className={styles.cardBlurb}>{project.blurb}</p>
+            </div>
+          </Link>
+        </li>
       ))}
-    </div>
+    </ul>
   )
 }
 

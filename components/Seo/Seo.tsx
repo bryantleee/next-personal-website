@@ -8,6 +8,7 @@ type SeoProps = {
   image?: string
   type?: 'website' | 'article'
   jsonLd?: Record<string, unknown>
+  noIndex?: boolean
 }
 
 const Seo = ({
@@ -17,6 +18,7 @@ const Seo = ({
   image = DEFAULT_SOCIAL_IMAGE,
   type = 'website',
   jsonLd,
+  noIndex = false,
 }: SeoProps) => {
   const url = `${SITE_URL}${path}`
   const absoluteImage = image.startsWith('http') ? image : `${SITE_URL}${image}`
@@ -25,6 +27,7 @@ const Seo = ({
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
+      {noIndex && <meta name="robots" content="noindex, nofollow" />}
       <link rel="canonical" href={url} />
 
       <meta property="og:type" content={type} />

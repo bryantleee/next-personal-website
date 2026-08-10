@@ -31,7 +31,7 @@ const ProjectPage = ({ project, children }: ProjectPageProps) => {
           url: `${SITE_URL}${path}`,
         }}
       />
-      <main className={styles.main}>
+      <main id="main-content" className={styles.main}>
         <div className={styles.projectsHeader}>
           <h1 className={styles.projectsTitle}>{project.title}</h1>
           <p className={styles.projectsSubtitle}>{project.subtitle}</p>

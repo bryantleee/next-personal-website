@@ -5,6 +5,11 @@
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  list-style: none;
+}
+
+.cardItem {
+  display: flex;
 }
 
 .card {
@@ -17,12 +22,17 @@
   color: #fff;
   text-decoration: none;
   transition: border-color 0.2s ease, transform 0.2s ease;
+  width: 100%;
 
   &:hover,
-  &:focus,
+  &:focus-visible,
   &:active {
     border-color: #ebc95b;
     transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline-offset: 4px;
   }
 }
 
