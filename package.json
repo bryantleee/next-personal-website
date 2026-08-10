@@ -8,12 +8,13 @@
   },
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/check-image-metadata.mjs",
+    "prebuild": "node scripts/check-image-metadata.mjs && node scripts/generate-sitemap.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "typecheck": "tsc --noEmit",
+    "generate:sitemap": "node scripts/generate-sitemap.mjs",
     "test:photos": "node scripts/check-image-metadata.mjs",
     "strip:photos": "node scripts/strip-image-metadata.mjs"
   },

@@ -1,5 +1,4 @@
 import type { NextPage } from 'next'
-import Footer from '../components/Footer/Footer'
 import Intro from '../components/Intro/Intro'
 import BryantLogo from '../components/BryantLogo/BryantLogo'
 import Seo from '../components/Seo/Seo'
@@ -32,7 +31,6 @@ const Home: NextPage = () => {
 
         <Intro/>
       </main>
-      <Footer/>
     </>
   )
 }

@@ -1,50 +1,13 @@
 import type { NextPage } from "next";
-import Image from "next/image";
-import Footer from "../../../components/Footer/Footer";
-import Seo from "../../../components/Seo/Seo";
-import styles from "../../../styles/Home.module.scss";
+import ProjectPage from "../../../components/ProjectPage/ProjectPage";
+import { getProject } from "../../../data/projects";
 import projectStyles from "../../../styles/ProjectPage.module.scss";
 
-const DESKTOP_PC_DESCRIPTION =
-  "A dual-GPU desktop PC build: i9-12900K, RTX 3090 Ti and 2080 Ti, Z690, Noctua air cooling, in a Corsair 4000D Airflow.";
+const project = getProject("desktop-pc");
 
 const DesktopPc: NextPage = () => {
   return (
-    <>
-      <Seo
-        title="Desktop PC | Bryant Lee"
-        description={DESKTOP_PC_DESCRIPTION}
-        path="/projects/desktop-pc"
-        image="/desktop-pc.webp"
-        type="article"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "CreativeWork",
-          name: "Desktop PC",
-          description: DESKTOP_PC_DESCRIPTION,
-          image: "https://www.bryant.li/desktop-pc.webp",
-          author: { "@type": "Person", name: "Bryant Lee" },
-          url: "https://www.bryant.li/projects/desktop-pc",
-        }}
-      />
-      <main className={styles.main}>
-        <div className={styles.projectsHeader}>
-          <h1 className={styles.projectsTitle}>Desktop PC</h1>
-          <p className={styles.projectsSubtitle}>Introducing my PC!</p>
-        </div>
-        <div className={projectStyles.content}>
-          <div className={projectStyles.hero}>
-            <Image
-              src="/desktop-pc.webp"
-              alt="Desktop PC build"
-              width={1800}
-              height={2400}
-              priority
-              sizes="(max-width: 768px) 100vw, 900px"
-              className={`${projectStyles.heroImage} ${projectStyles.heroImageNarrow}`}
-            />
-          </div>
-
+    <ProjectPage project={project}>
           <h2 className={projectStyles.sectionHeading}>About</h2>
           <p className={projectStyles.body}>
             Wanted to share my desktop I have had for a few years now! I use it
@@ -105,10 +68,7 @@ const DesktopPc: NextPage = () => {
               mesh front panel.
             </li>
           </ul>
-        </div>
-      </main>
-      <Footer />
-    </>
+    </ProjectPage>
   );
 };
 

@@ -1,52 +1,13 @@
 import type { NextPage } from "next";
-import Image from "next/image";
-import Footer from "../../../components/Footer/Footer";
-import Seo from "../../../components/Seo/Seo";
-import styles from "../../../styles/Home.module.scss";
+import ProjectPage from "../../../components/ProjectPage/ProjectPage";
+import { getProject } from "../../../data/projects";
 import projectStyles from "../../../styles/ProjectPage.module.scss";
 
-const EXPENSE_TRACKER_DESCRIPTION =
-  "Automated expense tracking that scrapes Chase and Amazon emails, matches charges to line-item orders, and exposes the data to LLM agents over MCP.";
+const project = getProject("expense-tracker");
 
 const ExpenseTracker: NextPage = () => {
   return (
-    <>
-      <Seo
-        title="Expense Tracker | Bryant Lee"
-        description={EXPENSE_TRACKER_DESCRIPTION}
-        path="/projects/expense-tracker"
-        image="/expense-tracker.webp"
-        type="article"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "CreativeWork",
-          name: "Expense Tracker",
-          description: EXPENSE_TRACKER_DESCRIPTION,
-          image: "https://www.bryant.li/expense-tracker.webp",
-          author: { "@type": "Person", name: "Bryant Lee" },
-          url: "https://www.bryant.li/projects/expense-tracker",
-        }}
-      />
-      <main className={styles.main}>
-        <div className={styles.projectsHeader}>
-          <h1 className={styles.projectsTitle}>Expense Tracker</h1>
-          <p className={styles.projectsSubtitle}>
-            Automated personal-finance pipeline
-          </p>
-        </div>
-        <div className={projectStyles.content}>
-          <div className={projectStyles.hero}>
-            <Image
-              src="/expense-tracker.webp"
-              alt="Expense Tracker architecture diagram"
-              width={1200}
-              height={260}
-              priority
-              sizes="(max-width: 768px) 100vw, 900px"
-              className={projectStyles.heroImage}
-            />
-          </div>
-
+    <ProjectPage project={project}>
           <h2 className={projectStyles.sectionHeading}>About</h2>
           <p className={projectStyles.body}>
             I built a personal expense tracker to track credit card expenses. I
@@ -115,10 +76,7 @@ const ExpenseTracker: NextPage = () => {
               react.
             </li>
           </ul>
-        </div>
-      </main>
-      <Footer />
-    </>
+    </ProjectPage>
   );
 };
 

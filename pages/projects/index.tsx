@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
 import Projects from '../../components/Projects/Projects'
-import Footer from '../../components/Footer/Footer'
 import Seo from '../../components/Seo/Seo'
 import styles from '../../styles/Home.module.scss'
 
@@ -20,7 +19,6 @@ const ProjectsPage: NextPage = () => {
         </div>
         <Projects />
       </main>
-      <Footer />
     </>
   )
 }

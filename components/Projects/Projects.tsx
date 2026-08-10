@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import styles from './Projects.module.scss'
-import { projects } from './projectsData'
+import { projects } from '../../data/projects'
 
 const Thumbnail = ({
   src,
@@ -37,15 +37,11 @@ const Projects = () => {
           href={`/projects/${project.slug}`}
           className={styles.card}
         >
-          {project.imageUrl ? (
-            <Thumbnail
-              src={project.imageUrl}
-              alt={project.title}
-              eager={index < 2}
-            />
-          ) : (
-            <div className={styles.thumbnailPlaceholder} aria-hidden="true" />
-          )}
+          <Thumbnail
+            src={project.image.src}
+            alt={project.image.alt}
+            eager={index < 2}
+          />
           <div className={styles.cardBody}>
             <h2 className={styles.cardTitle}>{project.title}</h2>
             <p className={styles.cardSubtitle}>{project.subtitle}</p>
