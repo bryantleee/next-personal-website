@@ -2,12 +2,18 @@
   "name": "next-personal-website",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "yarn@1.22.22",
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "next dev",
     "prebuild": "node scripts/check-image-metadata.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit",
     "test:photos": "node scripts/check-image-metadata.mjs",
     "strip:photos": "node scripts/strip-image-metadata.mjs"
   },
@@ -18,23 +24,13 @@
     "wasmboy": "^0.7.1"
   },
   "devDependencies": {
-    "@types/node": "17.0.40",
+    "@types/node": "^20.19.0",
     "@types/react": "18.0.12",
     "@types/react-dom": "18.0.5",
-    "eslint": "8.17.0",
-    "eslint-config-next": "^13.2.1",
+    "eslint": "^9.39.1",
+    "eslint-config-next": "^16.3.0",
     "sass": "^1.58.3",
+    "sharp": "^0.35.3",
     "typescript": "^5.9.3"
-  },
-  "resolutions": {
-    "postcss": "^8.5.23",
-    "picomatch": "^4.0.4",
-    "flatted": "^3.4.2",
-    "immutable": "^5.1.8",
-    "js-yaml": "^4.3.1",
-    "minimatch": "^9.0.7",
-    "brace-expansion": "^2.1.4",
-    "ajv": "^6.14.0",
-    "sharp": "^0.35.0"
   }
 }
