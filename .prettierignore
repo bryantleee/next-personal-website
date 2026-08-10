@@ -1,0 +1,14 @@
+.next
+.claude
+.zed
+node_modules
+out
+coverage
+playwright-report
+test-results
+yarn.lock
+next-env.d.ts
+public/*.gb
+public/*.svg
+public/*.webp
+public/social-card.png

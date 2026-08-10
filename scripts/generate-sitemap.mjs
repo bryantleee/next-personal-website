@@ -1,7 +1,7 @@
 import { readFile, writeFile } from 'node:fs/promises'
 const site = JSON.parse(await readFile(new URL('../data/site.json', import.meta.url), 'utf8'))
 const projects = JSON.parse(
-  await readFile(new URL('../data/projects.json', import.meta.url), 'utf8')
+  await readFile(new URL('../data/projects.json', import.meta.url), 'utf8'),
 )
 
 const escapeXml = (value) =>

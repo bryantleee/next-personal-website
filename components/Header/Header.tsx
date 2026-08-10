@@ -28,8 +28,7 @@ const Header = () => {
           // `/projects/home-lab` should keep the Projects link lit. The `/`
           // suffix keeps href="/" from matching every page.
           const isCurrentPage = router.pathname === href
-          const isActive =
-            isCurrentPage || router.pathname.startsWith(`${href}/`)
+          const isActive = isCurrentPage || router.pathname.startsWith(`${href}/`)
           return (
             <Link
               key={href}

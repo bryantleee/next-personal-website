@@ -17,10 +17,7 @@ const Home: NextPage = () => {
           name: 'Bryant Lee',
           url: 'https://www.bryant.li',
           jobTitle: 'Software Engineer',
-          sameAs: [
-            'https://github.com/bryantleee',
-            'https://www.linkedin.com/in/bryantleee/',
-          ],
+          sameAs: ['https://github.com/bryantleee', 'https://www.linkedin.com/in/bryantleee/'],
         }}
       />
 

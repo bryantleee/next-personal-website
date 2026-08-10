@@ -22,7 +22,7 @@ for (const { path, heading } of routes) {
     await expect(page.getByRole('heading', { level: 1, name: heading })).toHaveCount(1)
     await expect(page.getByRole('link', { name: 'Skip to main content' })).toHaveAttribute(
       'href',
-      '#main-content'
+      '#main-content',
     )
 
     const accessibilityScan = await new AxeBuilder({ page }).analyze()
@@ -36,11 +36,26 @@ test('project cards and metadata come from the shared catalog', async ({ page })
   await expect(page.locator('main li')).toHaveCount(5)
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
     'href',
-    'https://www.bryant.li/projects'
+    'https://www.bryant.li/projects',
   )
   await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
     'content',
-    'https://www.bryant.li/home-lab.webp'
+    'https://www.bryant.li/home-lab.webp',
+  )
+})
+
+test('the home page publishes a complete raster social preview', async ({ page }) => {
+  await page.goto('/')
+
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
+    'content',
+    'https://www.bryant.li/social-card.png',
+  )
+  await expect(page.locator('meta[property="og:image:width"]')).toHaveAttribute('content', '1200')
+  await expect(page.locator('meta[property="og:image:height"]')).toHaveAttribute('content', '630')
+  await expect(page.locator('meta[property="og:image:alt"]')).toHaveAttribute(
+    'content',
+    'Bryant Lee social preview',
   )
 })
 
@@ -49,10 +64,7 @@ test('the custom not-found page remains out of search indexes', async ({ page })
 
   expect(response?.status()).toBe(404)
   await expect(page.getByRole('heading', { level: 1, name: 'Page not found' })).toBeVisible()
-  await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
-    'content',
-    'noindex, nofollow'
-  )
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow')
 })
 
 test('the emulator exposes usable controls before downloading the ROM', async ({ page }) => {
