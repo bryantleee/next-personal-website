@@ -4,7 +4,7 @@ The source for [bryant.li](https://www.bryant.li), a statically generated portfo
 
 ## Requirements
 
-- Node.js 20.9 or newer
+- Node.js 24 or newer
 - Yarn 1.22
 
 ## Local development

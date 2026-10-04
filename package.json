@@ -4,7 +4,7 @@
   "private": true,
   "packageManager": "yarn@1.22.22",
   "engines": {
-    "node": ">=20.9.0"
+    "node": ">=24.0.0"
   },
   "scripts": {
     "dev": "next dev",
@@ -26,27 +26,29 @@
   },
   "dependencies": {
     "next": "^16.3.8",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
     "wasmboy": "^0.7.1"
   },
   "devDependencies": {
-    "@axe-core/playwright": "^4.12.1",
-    "@playwright/test": "^1.62.1",
-    "@testing-library/dom": "^10.4.1",
-    "@testing-library/jest-dom": "6.9.1",
-    "@testing-library/react": "^16.3.2",
-    "@types/node": "^20.19.0",
-    "@types/react": "18.0.12",
-    "@types/react-dom": "18.0.5",
-    "eslint": "^9.39.1",
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0",
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@types/node": "^24.19.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "eslint": "^10.12.0",
     "eslint-config-next": "^16.3.8",
-    "happy-dom": "^20.11.2",
-    "playwright-core": "^1.62.1",
-    "prettier": "^3.9.6",
-    "sass": "^1.58.3",
+    "happy-dom": "^20.14.5",
+    "playwright-core": "^1.63.0",
+    "prettier": "^3.9.9",
+    "sass": "^1.105.1",
     "sharp": "^0.35.5",
-    "typescript": "^5.9.3",
-    "vitest": "^4.1.11"
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
+    "vite": "^8.3.2",
+    "vitest": "^5.0.3"
   }
 }

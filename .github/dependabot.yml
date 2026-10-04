@@ -5,3 +5,7 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    ignore:
+      # @types/node tracks the runtime major (engines.node >= 24); skip 26.x proposals.
+      - dependency-name: '@types/node'
+        update-types: ['version-update:semver-major']
