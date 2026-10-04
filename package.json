@@ -46,7 +46,7 @@
     "prettier": "^3.9.6",
     "sass": "^1.58.3",
     "sharp": "^0.35.5",
-    "typescript": "^5.9.3",
+    "typescript": "^7.0.2",
     "vitest": "^4.1.11"
   }
 }
