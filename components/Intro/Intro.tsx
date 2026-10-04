@@ -8,8 +8,8 @@ const Intro = () => {
         I am a software engineer living in Manhattan, currently working at Meta.
       </p>
       <p className={styles.intro__text}>
-        Outside of work, I love trying new video games, homelabbing, doing side projects, and exploring interesting
-        places!
+        Outside of work, I love trying new video games, homelabbing, doing side projects, and
+        exploring interesting places!
       </p>
       <p className={styles.intro__text}>
         Please feel free to reach out or find me on other platforms at the links below!
