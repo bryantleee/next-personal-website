@@ -9,7 +9,7 @@ describe('Intro', () => {
     expect(
       screen.getByRole('heading', {
         level: 1,
-        name: 'Hello! My name is Bryant Lee.',
+        name: 'Hello! My name is Bryant!',
       }),
     ).toBeInTheDocument()
     expect(container.querySelectorAll('p')).toHaveLength(3)

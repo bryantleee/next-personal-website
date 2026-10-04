@@ -2,7 +2,7 @@ import AxeBuilder from '@axe-core/playwright'
 import { expect, test } from '@playwright/test'
 
 const routes = [
-  { path: '/', heading: 'Hello! My name is Bryant Lee.' },
+  { path: '/', heading: 'Hello! My name is Bryant!' },
   { path: '/projects', heading: 'Projects' },
   { path: '/projects/project-scout', heading: 'Project Scout' },
   { path: '/projects/home-lab', heading: 'Home Lab' },
