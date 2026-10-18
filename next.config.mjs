@@ -34,6 +34,12 @@ const SECURITY_HEADERS = [
 
 const nextConfig = {
   reactStrictMode: true,
+  experimental: {
+    // Next 16.4 defaults this to true, which inlines the Turbopack chunk
+    // bootstrap as an inline <script> that the strict CSP above blocks, so
+    // nothing hydrates in production. https://github.com/vercel/next.js/issues/99799
+    turbopackSharedRuntime: false,
+  },
   sassOptions: {
     includePaths: [join(rootDirectory, 'styles')],
   },
